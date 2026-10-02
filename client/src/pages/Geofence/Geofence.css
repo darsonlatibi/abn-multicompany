@@ -1,0 +1,1158 @@
+/* =========================================================
+   ABN FLEET SYSTEM
+   GEOFENCE
+   THEME AWARE — LIGHT / DARK
+   ========================================================= */
+
+.geofence-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.geofence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.geofence-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.geofence-title-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--accent-soft);
+  color: var(--text-info);
+
+  border: 1px solid var(--border-color);
+}
+
+.geofence-title-row h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.geofence-title-row p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
+.geofence-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 36px;
+  padding: 9px 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.geofence-refresh:hover:not(:disabled) {
+  border-color: var(--border-color-focus);
+  background: var(--bg-surface-soft);
+  color: var(--text-info);
+}
+
+.geofence-refresh:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.geofence-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.geofence-spin {
+  animation: geofence-spin 1s linear infinite;
+}
+
+@keyframes geofence-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ALERT
+   ========================================================= */
+
+.geofence-alert {
+  min-height: 42px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+.geofence-alert strong {
+  font-weight: 700;
+}
+
+.geofence-alert span {
+  flex: 1;
+}
+
+.geofence-alert.error {
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #b91c1c;
+}
+
+.geofence-alert.success {
+  border: 1px solid rgba(34, 197, 94, 0.25);
+
+  background: rgba(34, 197, 94, 0.08);
+
+  color: #15803d;
+}
+
+[data-theme="dark"] .geofence-alert.error {
+  color: #f87171;
+}
+
+[data-theme="dark"] .geofence-alert.success {
+  color: #4ade80;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.geofence-content {
+  display: grid;
+
+  grid-template-columns: 330px minmax(0, 1fr);
+
+  gap: 16px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   FORM CARD / LIST CARD
+   ========================================================= */
+
+.geofence-form-card,
+.geofence-list-card,
+.geofence-detail {
+  min-width: 0;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.geofence-form-card,
+.geofence-list-card {
+  overflow: hidden;
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.geofence-card-header {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--bg-surface);
+}
+
+.geofence-card-header > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.geofence-card-header strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.geofence-card-header span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.geofence-close {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.geofence-close:hover {
+  border-color: rgba(239, 68, 68, 0.25);
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #dc2626;
+}
+
+[data-theme="dark"] .geofence-close:hover {
+  color: #f87171;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.geofence-form-card form {
+  padding: 18px;
+}
+
+.geofence-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 15px;
+}
+
+.geofence-field label {
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.geofence-field input,
+.geofence-field textarea,
+.geofence-field select {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+
+  outline: none;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.geofence-field input,
+.geofence-field select {
+  height: 38px;
+
+  padding: 0 10px;
+}
+
+.geofence-field textarea {
+  min-height: 82px;
+
+  padding: 10px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.geofence-field input::placeholder,
+.geofence-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.geofence-field input:focus,
+.geofence-field textarea:focus,
+.geofence-field select:focus {
+  border-color: var(--border-color-focus);
+
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.geofence-field input:disabled,
+.geofence-field textarea:disabled,
+.geofence-field select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+
+  background: var(--bg-surface-soft);
+}
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.geofence-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   INPUT UNIT
+   ========================================================= */
+
+.geofence-input-unit {
+  position: relative;
+}
+
+.geofence-input-unit input {
+  padding-right: 42px;
+}
+
+.geofence-input-unit span {
+  position: absolute;
+
+  top: 50%;
+  right: 12px;
+
+  transform: translateY(-50%);
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.geofence-form-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.geofence-save,
+.geofence-cancel {
+  min-height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    opacity 0.18s ease;
+}
+
+/* =========================================================
+   SAVE
+   ========================================================= */
+
+.geofence-save {
+  flex: 1;
+
+  border: 1px solid var(--text-primary);
+
+  background: var(--text-primary);
+  color: var(--bg-surface);
+}
+
+.geofence-save:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.geofence-save:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+.geofence-cancel {
+  border: 1px solid var(--border-color);
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+}
+
+.geofence-cancel:hover {
+  background: var(--bg-surface-soft);
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   COUNT
+   ========================================================= */
+
+.geofence-count {
+  min-width: 26px;
+  height: 26px;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 !important;
+
+  padding: 0 7px;
+
+  border-radius: 6px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary) !important;
+
+  font-size: 11px !important;
+  font-weight: 700;
+}
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.geofence-list {
+  padding: 8px;
+}
+
+/* =========================================================
+   GEOFENCE ITEM
+   ========================================================= */
+
+.geofence-item {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    36px
+    minmax(0, 1fr)
+    auto
+    auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: var(--bg-surface);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.geofence-item:hover {
+  background: var(--bg-surface-soft);
+
+  border-color: var(--border-color);
+}
+
+.geofence-item.selected {
+  background: var(--accent-soft);
+
+  border-color: var(--border-color-focus);
+}
+
+/* =========================================================
+   ITEM ICON
+   ========================================================= */
+
+.geofence-item-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary);
+
+  border: 1px solid var(--border-color);
+}
+
+.geofence-item.selected .geofence-item-icon {
+  background: var(--accent-soft);
+
+  border-color: var(--border-color-focus);
+
+  color: var(--text-info);
+}
+
+/* =========================================================
+   ITEM INFO
+   ========================================================= */
+
+.geofence-item-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.geofence-item-info > strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geofence-item-info > span {
+  display: block;
+
+  overflow: hidden;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geofence-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 6px;
+}
+
+.geofence-item-meta span {
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.geofence-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 62px;
+  min-height: 23px;
+
+  padding: 0 8px;
+
+  border-radius: 4px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.geofence-status.active {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.geofence-status.inactive {
+  background: var(--bg-surface-soft);
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   ITEM ACTIONS
+   ========================================================= */
+
+.geofence-item-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.geofence-item-actions button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+}
+
+.geofence-item-actions button:hover:not(:disabled) {
+  background: var(--bg-surface-soft);
+
+  border-color: var(--border-color-focus);
+
+  color: var(--text-primary);
+}
+
+.geofence-item-actions button.danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.08);
+
+  border-color: rgba(239, 68, 68, 0.25);
+
+  color: #dc2626;
+}
+
+[data-theme="dark"] .geofence-item-actions button.danger:hover:not(:disabled) {
+  color: #f87171;
+}
+
+.geofence-item-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.geofence-empty {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 30px 20px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+}
+
+.geofence-empty strong {
+  margin-top: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.geofence-empty span {
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   DETAIL
+   ========================================================= */
+
+.geofence-detail {
+  margin-top: 16px;
+
+  padding: 16px;
+
+  overflow: hidden;
+}
+
+.geofence-detail-title {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: var(--text-info);
+}
+
+.geofence-detail-title > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.geofence-detail-title strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.geofence-detail-title span {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   DETAIL GRID
+   ========================================================= */
+
+.geofence-detail-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.geofence-detail-grid > div {
+  min-width: 0;
+
+  padding-right: 12px;
+
+  border-right: 1px solid var(--border-color);
+}
+
+.geofence-detail-grid > div:last-child {
+  border-right: 0;
+}
+
+.geofence-detail-grid span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.geofence-detail-grid strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geofence-detail-grid strong.active {
+  color: var(--status-success);
+}
+
+.geofence-detail-grid strong.inactive {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   ACCESS / LOADING SAFETY
+   ========================================================= */
+
+.geofence-page button:disabled {
+  cursor: not-allowed;
+}
+
+.geofence-page input:disabled,
+.geofence-page select:disabled,
+.geofence-page textarea:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.geofence-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.geofence-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.geofence-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.geofence-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--border-color);
+}
+
+.geofence-list::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* =========================================================
+   RESPONSIVE - 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .geofence-content {
+    grid-template-columns: 310px minmax(0, 1fr);
+  }
+
+  .geofence-detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .geofence-detail-grid > div:nth-child(3),
+  .geofence-detail-grid > div:nth-child(6) {
+    border-right: 0;
+  }
+}
+
+/* =========================================================
+   TABLET - 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .geofence-page {
+    padding: 18px;
+  }
+
+  .geofence-content {
+    grid-template-columns: 1fr;
+  }
+
+  .geofence-form-card {
+    width: 100%;
+  }
+
+  .geofence-detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .geofence-detail-grid > div {
+    border-right: 1px solid var(--border-color);
+  }
+
+  .geofence-detail-grid > div:nth-child(3),
+  .geofence-detail-grid > div:nth-child(6) {
+    border-right: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE - 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .geofence-page {
+    padding: 15px;
+  }
+
+  .geofence-header {
+    align-items: flex-start;
+  }
+
+  .geofence-title-row {
+    align-items: flex-start;
+  }
+
+  .geofence-title-row h1 {
+    font-size: 21px;
+  }
+
+  .geofence-title-row p {
+    font-size: 12px;
+  }
+
+  .geofence-refresh {
+    width: 36px;
+
+    padding: 8px;
+
+    font-size: 0;
+  }
+
+  .geofence-refresh svg {
+    margin: 0;
+  }
+
+  .geofence-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .geofence-item {
+    grid-template-columns:
+      36px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 9px;
+  }
+
+  .geofence-status {
+    display: none;
+  }
+
+  .geofence-detail {
+    margin-top: 16px;
+  }
+
+  .geofence-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .geofence-detail-grid > div {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--border-color);
+
+    padding-right: 0;
+    padding-bottom: 8px;
+  }
+
+  .geofence-detail-grid > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE - 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .geofence-page {
+    padding: 10px;
+  }
+
+  .geofence-title-row {
+    gap: 9px;
+  }
+
+  .geofence-title-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .geofence-title-row h1 {
+    font-size: 20px;
+  }
+
+  .geofence-title-row p {
+    font-size: 11px;
+  }
+
+  .geofence-card-header {
+    padding: 0 12px;
+  }
+
+  .geofence-form-card form {
+    padding: 14px;
+  }
+
+  .geofence-item {
+    padding: 10px;
+  }
+
+  .geofence-item-actions {
+    flex-direction: column;
+  }
+
+  .geofence-detail {
+    padding: 14px;
+  }
+
+  .geofence-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .geofence-detail-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .geofence-detail-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .geofence-form-actions {
+    flex-direction: column;
+  }
+
+  .geofence-save,
+  .geofence-cancel {
+    width: 100%;
+  }
+}

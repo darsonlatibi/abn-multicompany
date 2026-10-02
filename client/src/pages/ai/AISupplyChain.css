@@ -1,0 +1,1108 @@
+/* =========================================================
+   AI SUPPLY CHAIN PAGE
+   ========================================================= */
+
+.ai-supply-page {
+  padding: 24px;
+  min-height: 100%;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ai-supply-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.ai-supply-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ai-supply-title-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #172033, #334155);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+}
+
+.ai-supply-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.ai-supply-title h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.ai-supply-title p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.ai-supply-refresh {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #dbe2ea;
+  background: #fff;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ai-supply-refresh:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.ai-supply-status {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 13px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.supply-status-left,
+.supply-status-right {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.supply-status-left > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.supply-status-left strong {
+  font-size: 13px;
+}
+
+.supply-status-left span:not(.supply-status-dot) {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.supply-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.1);
+}
+
+.supply-status-right span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.ai-supply-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ai-supply-kpi-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 17px;
+}
+
+.ai-supply-kpi-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-supply-kpi-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.supply-kpi-trend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.supply-kpi-trend.up {
+  color: #16a34a;
+}
+
+.supply-kpi-trend.down {
+  color: #2563eb;
+}
+
+.supply-kpi-trend.stable {
+  color: #64748b;
+}
+
+.ai-supply-kpi-value {
+  margin-top: 15px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.ai-supply-kpi-label {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =========================================================
+   COPILOT
+   ========================================================= */
+
+.ai-supply-copilot {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.supply-copilot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.supply-copilot-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.supply-copilot-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.supply-copilot-brand h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.supply-copilot-brand p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.supply-ai-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.supply-chat {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.supply-chat-avatar {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #172033;
+  color: #fff;
+}
+
+.supply-chat-content {
+  flex: 1;
+}
+
+.supply-chat-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.supply-chat-name span {
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.supply-chat-message {
+  margin-top: 7px;
+  padding: 13px 15px;
+  background: #f8fafc;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+}
+
+.supply-chat-message strong {
+  font-size: 13px;
+}
+
+.supply-chat-message p {
+  margin: 7px 0 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.supply-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.supply-capabilities span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.supply-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.supply-suggestions > span {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.supply-suggestions button {
+  border: 1px solid #dbe2ea;
+  background: #fff;
+  border-radius: 20px;
+  padding: 7px 10px;
+  color: #475569;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.supply-suggestions button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.ai-supply-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 7px 8px 7px 13px;
+  border: 1px solid #dbe2ea;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.ai-supply-input > svg {
+  color: #94a3b8;
+}
+
+.ai-supply-input input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #172033;
+  background: transparent;
+}
+
+.supply-send-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 9px;
+  background: #172033;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.supply-send-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.supply-spin {
+  animation: supply-spin 0.9s linear infinite;
+}
+
+@keyframes supply-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   AI ANSWER
+   ========================================================= */
+
+.supply-ai-answer {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.supply-answer-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.supply-confidence {
+  margin-left: auto;
+  color: #16a34a;
+  font-size: 10px;
+}
+
+.supply-question {
+  margin-top: 11px;
+  font-size: 11px;
+  color: #475569;
+}
+
+.supply-question strong {
+  margin-right: 5px;
+}
+
+.supply-ai-answer > p {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.supply-diagnosis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.supply-diagnosis-item {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+}
+
+.supply-diagnosis-label {
+  display: block;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.supply-diagnosis-item strong {
+  font-size: 11px;
+}
+
+.supply-recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 11px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.supply-recommendation strong {
+  font-size: 11px;
+}
+
+.supply-recommendation span {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.ai-supply-main-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.ai-supply-health,
+.ai-supply-procurement {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.supply-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.supply-section-heading > div:first-child span {
+  display: block;
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.supply-section-heading h2 {
+  margin: 3px 0 0;
+  font-size: 16px;
+}
+
+.supply-section-heading > svg {
+  color: #64748b;
+}
+
+/* =========================================================
+   INVENTORY HEALTH
+   ========================================================= */
+
+.inventory-health-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.inventory-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 245px;
+}
+
+.inventory-circle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 8px solid #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inventory-circle strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.inventory-circle span {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.inventory-score > div:last-child strong {
+  display: block;
+  font-size: 13px;
+}
+
+.inventory-score > div:last-child p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.inventory-stat-grid {
+  flex: 1;
+  display: grid;
+  gap: 7px;
+}
+
+.inventory-stat {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.inventory-stat-icon {
+  display: flex;
+  color: #64748b;
+}
+
+.inventory-stat div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.inventory-stat div:nth-child(2) span {
+  font-size: 9px;
+  color: #94a3b8;
+}
+
+.inventory-stat div:nth-child(2) strong {
+  font-size: 12px;
+}
+
+.inventory-stat > b {
+  font-size: 10px;
+  color: #64748b;
+}
+
+/* =========================================================
+   PROCUREMENT
+   ========================================================= */
+
+.procurement-metric-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.procurement-metric {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 9px;
+}
+
+.procurement-metric-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 8px;
+  color: #475569;
+}
+
+.procurement-metric-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.procurement-metric-info span {
+  font-size: 9px;
+  color: #94a3b8;
+}
+
+.procurement-metric-info strong {
+  font-size: 13px;
+}
+
+.procurement-metric > b {
+  font-size: 10px;
+  color: #16a34a;
+}
+
+/* =========================================================
+   SUPPLY RISK
+   ========================================================= */
+
+.ai-supply-risk-section,
+.ai-supply-insights {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.supply-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #16a34a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.supply-live span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+}
+
+.supply-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.supply-risk-card {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.supply-risk-card.critical {
+  border-top: 3px solid #dc2626;
+}
+
+.supply-risk-card.high {
+  border-top: 3px solid #ea580c;
+}
+
+.supply-risk-card.medium {
+  border-top: 3px solid #ca8a04;
+}
+
+.supply-risk-card.low {
+  border-top: 3px solid #16a34a;
+}
+
+.supply-risk-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.supply-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.supply-item-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.supply-item div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.supply-item strong {
+  font-size: 11px;
+}
+
+.supply-item span {
+  font-size: 9px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.supply-risk-status {
+  font-size: 8px;
+  font-weight: 900;
+  align-self: flex-start;
+}
+
+.critical .supply-risk-status {
+  color: #dc2626;
+}
+
+.high .supply-risk-status {
+  color: #ea580c;
+}
+
+.medium .supply-risk-status {
+  color: #ca8a04;
+}
+
+.low .supply-risk-status {
+  color: #16a34a;
+}
+
+/* =========================================================
+   STOCK DATA
+   ========================================================= */
+
+.supply-stock-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.supply-stock-grid > div {
+  padding: 7px;
+  border-radius: 7px;
+  background: #f8fafc;
+}
+
+.supply-stock-grid span {
+  display: block;
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.supply-stock-grid strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+.supply-risk-card p {
+  margin: 12px 0;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.supply-risk-recommendation {
+  padding: 9px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.supply-risk-recommendation strong {
+  display: block;
+  font-size: 9px;
+  margin-bottom: 4px;
+}
+
+.supply-risk-recommendation span {
+  display: block;
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.supply-risk-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 11px;
+}
+
+.supply-risk-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  color: #94a3b8;
+}
+
+.supply-risk-footer button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   INSIGHTS
+   ========================================================= */
+
+.supply-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.supply-insight-card {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+}
+
+.supply-insight-card.critical {
+  border-left: 3px solid #dc2626;
+}
+
+.supply-insight-card.warning {
+  border-left: 3px solid #f59e0b;
+}
+
+.supply-insight-card.info {
+  border-left: 3px solid #2563eb;
+}
+
+.supply-insight-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.supply-severity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.supply-insight-card.critical .supply-severity {
+  color: #dc2626;
+}
+
+.supply-insight-card.warning .supply-severity {
+  color: #ca8a04;
+}
+
+.supply-insight-card.info .supply-severity {
+  color: #2563eb;
+}
+
+.supply-insight-top > span {
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.supply-insight-card h3 {
+  margin: 11px 0 6px;
+  font-size: 13px;
+}
+
+.supply-insight-card > p {
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.supply-insight-action {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 11px;
+  padding: 9px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.supply-insight-action strong {
+  font-size: 9px;
+}
+
+.supply-insight-action span {
+  font-size: 9px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.supply-insight-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  padding-top: 9px;
+  border-top: 1px solid #edf1f5;
+}
+
+.supply-insight-footer span {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.supply-insight-footer b {
+  font-size: 10px;
+  color: #16a34a;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.ai-supply-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 4px 0 15px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .supply-risk-grid,
+  .supply-insight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-supply-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ai-supply-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-supply-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-health-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inventory-score {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .ai-supply-page {
+    padding: 14px;
+  }
+
+  .ai-supply-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-supply-refresh {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .supply-status-right {
+    flex-wrap: wrap;
+  }
+
+  .ai-supply-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .supply-risk-grid,
+  .supply-insight-grid,
+  .supply-diagnosis {
+    grid-template-columns: 1fr;
+  }
+
+  .procurement-metric-list {
+    grid-template-columns: 1fr;
+  }
+
+  .supply-copilot-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .supply-ai-badge {
+    align-self: flex-start;
+  }
+
+  .supply-chat-name {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ai-supply-footer {
+    text-align: center;
+  }
+}

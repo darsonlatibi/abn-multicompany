@@ -1,0 +1,1366 @@
+/* =========================================================
+   TONASA GROUP
+   YAYASAN KESEJAHTERAAN SEMEN TONASA
+   FOUNDATION & SOCIAL WELFARE DASHBOARD
+   THEME AWARE
+   ========================================================= */
+
+.ykst-dashboard-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ykst-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.ykst-company-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.ykst-company-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.ykst-dashboard-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-info);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.ykst-dashboard-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.ykst-dashboard-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SERVER STATUS
+   ========================================================= */
+
+.ykst-server-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 42px;
+
+  padding: 8px 13px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--theme-transition);
+}
+
+.ykst-server-status strong {
+  display: block;
+
+  color: var(--status-success);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.ykst-server-status small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   STATUS DOT
+   ========================================================= */
+
+.ykst-status-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--text-muted);
+}
+
+.ykst-status-dot.online,
+.active-dot {
+  background: var(--status-success);
+
+  box-shadow: 0 0 0 3px var(--status-success-bg);
+}
+
+.completed-dot {
+  background: #2563eb;
+}
+
+.planned-dot {
+  background: #7c3aed;
+}
+
+.hold-dot {
+  background: #d97706;
+}
+
+.alarm-dot {
+  background: #dc2626;
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* =========================================================
+   FOUNDATION BAR
+   ========================================================= */
+
+.ykst-company-bar {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.ykst-company-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.ykst-company-badge {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.ykst-company-info strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+}
+
+.ykst-company-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.ykst-live-state {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.ykst-summary {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.ykst-summary-card {
+  min-width: 0;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.ykst-summary-card:hover {
+  background: var(--bg-surface-soft);
+
+  transform: translateY(-1px);
+}
+
+.ykst-summary-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-secondary);
+}
+
+.ykst-summary-content {
+  min-width: 0;
+}
+
+.ykst-summary-content span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+.ykst-summary-content strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.ykst-summary-content small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   SUMMARY VARIANTS
+   ========================================================= */
+
+.ykst-summary-card.active .ykst-summary-icon {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.ykst-summary-card.beneficiary .ykst-summary-icon {
+  background: rgba(124, 58, 237, 0.1);
+
+  color: #7c3aed;
+}
+
+.ykst-summary-card.education .ykst-summary-icon {
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #2563eb;
+}
+
+.ykst-summary-card.alert .ykst-summary-icon {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.ykst-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    330px;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.ykst-panel {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.ykst-panel-header {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ykst-panel-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ykst-panel-header p {
+  margin: 3px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   LIVE
+   ========================================================= */
+
+.ykst-live-indicator {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.ykst-live-indicator .ykst-status-dot {
+  animation: ykst-dashboard-pulse 1.5s infinite;
+}
+
+/* =========================================================
+   PROGRAM MAP
+   ========================================================= */
+
+.ykst-map-placeholder {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background-color: #eef2f7;
+
+  background-image:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+.ykst-map-placeholder::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 75%
+  );
+}
+
+.ykst-map-placeholder > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+.ykst-map-placeholder svg {
+  margin-bottom: 12px;
+
+  color: var(--text-info);
+}
+
+.ykst-map-placeholder h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+}
+
+.ykst-map-placeholder p {
+  max-width: 390px;
+
+  margin: 7px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.ykst-map-placeholder span {
+  margin-top: 8px;
+
+  padding: 5px 8px;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .ykst-map-placeholder {
+  background-color: #0b1220;
+
+  background-image:
+    linear-gradient(90deg, rgba(71, 85, 105, 0.16) 1px, transparent 1px),
+    linear-gradient(rgba(71, 85, 105, 0.16) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .ykst-map-placeholder::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(51, 65, 85, 0.35) 0%,
+    rgba(30, 41, 59, 0.18) 45%,
+    transparent 75%
+  );
+}
+
+/* =========================================================
+   STATUS LIST
+   ========================================================= */
+
+.ykst-status-list {
+  padding: 6px 16px 12px;
+}
+
+.ykst-status-row {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ykst-status-row:last-child {
+  border-bottom: 0;
+}
+
+.ykst-status-label {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ykst-status-row strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+.ykst-performance-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.ykst-performance-panel {
+  min-width: 0;
+}
+
+.ykst-performance-panel .ykst-panel-header svg {
+  color: var(--text-info);
+}
+
+.ykst-performance-body {
+  min-height: 125px;
+
+  padding: 15px 16px;
+
+  box-sizing: border-box;
+}
+
+.ykst-performance-value {
+  display: flex;
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-bottom: 13px;
+}
+
+.ykst-performance-value strong {
+  color: var(--text-primary);
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.ykst-performance-value span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.ykst-progress {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--bg-surface-soft);
+}
+
+.ykst-progress span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--text-info);
+
+  transition: width 0.3s ease;
+}
+
+.ykst-performance-meta {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 9px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   PROGRAM PANEL
+   ========================================================= */
+
+.ykst-program-panel {
+  margin-bottom: 16px;
+}
+
+.ykst-view-all-button {
+  min-height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 10px;
+
+  background: var(--bg-surface-soft);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 6px;
+
+  color: var(--text-info);
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.ykst-view-all-button:hover {
+  background: var(--accent-soft);
+
+  border-color: var(--border-color-focus);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.ykst-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.ykst-table {
+  width: 100%;
+
+  min-width: 720px;
+
+  border-collapse: collapse;
+}
+
+.ykst-table th {
+  padding: 11px 16px;
+
+  background: var(--bg-surface-soft);
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-muted);
+
+  text-align: left;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.ykst-table td {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+.ykst-table tbody tr:hover {
+  background: var(--bg-surface-soft);
+}
+
+.ykst-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ykst-table td strong {
+  color: var(--text-primary);
+
+  font-size: 11px;
+}
+
+.ykst-table tbody td[colspan] {
+  padding: 28px 16px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.ykst-location-cell {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+.ykst-location-cell svg {
+  color: var(--text-info);
+}
+
+/* =========================================================
+   PROGRAM STATUS
+   ========================================================= */
+
+.ykst-program-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.ykst-program-status.active {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.ykst-program-status.completed {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+}
+
+.ykst-program-status.planned {
+  background: #ede9fe;
+
+  color: #6d28d9;
+}
+
+.ykst-program-status.on_hold {
+  background: #fef3c7;
+
+  color: #a16207;
+}
+
+.ykst-program-status.alarm {
+  background: #ffe4e6;
+
+  color: #be123c;
+}
+
+[data-theme="dark"] .ykst-program-status.active {
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #4ade80;
+}
+
+[data-theme="dark"] .ykst-program-status.completed {
+  background: rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .ykst-program-status.planned {
+  background: rgba(124, 58, 237, 0.12);
+
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .ykst-program-status.on_hold {
+  background: rgba(245, 158, 11, 0.12);
+
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .ykst-program-status.alarm {
+  background: rgba(225, 29, 72, 0.12);
+
+  color: #fb7185;
+}
+
+/* =========================================================
+   CAPABILITY
+   ========================================================= */
+
+.ykst-capability-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.ykst-mini-panel {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 13px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 9px;
+}
+
+.ykst-mini-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.ykst-mini-panel strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 10px;
+}
+
+.ykst-mini-panel span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   INTELLIGENCE
+   ========================================================= */
+
+.ykst-intelligence-panel {
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 17px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+}
+
+.ykst-intelligence-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.ykst-intelligence-panel > div:nth-child(2) {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.ykst-intelligence-panel span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-info);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.ykst-intelligence-panel h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.ykst-intelligence-panel p {
+  max-width: 760px;
+
+  margin: 5px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.ykst-intelligence-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  flex-shrink: 0;
+
+  background: var(--status-success-bg);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   DARK STATUS
+   ========================================================= */
+
+[data-theme="dark"] .completed-dot {
+  background: #60a5fa;
+}
+
+[data-theme="dark"] .planned-dot {
+  background: #a78bfa;
+}
+
+[data-theme="dark"] .hold-dot {
+  background: #fbbf24;
+}
+
+[data-theme="dark"] .alarm-dot {
+  background: #fb7185;
+}
+
+/* =========================================================
+   RESPONSIVE 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .ykst-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ykst-performance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ykst-capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ykst-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      290px;
+  }
+}
+
+/* =========================================================
+   TABLET 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .ykst-dashboard-page {
+    padding: 18px;
+  }
+
+  .ykst-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ykst-map-placeholder {
+    min-height: 380px;
+  }
+
+  .ykst-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .ykst-dashboard-page {
+    padding: 15px;
+  }
+
+  .ykst-dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .ykst-dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .ykst-dashboard-header p {
+    font-size: 11px;
+  }
+
+  .ykst-server-status {
+    width: 100%;
+  }
+
+  .ykst-company-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .ykst-live-state {
+    align-self: flex-end;
+  }
+
+  .ykst-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .ykst-summary-card {
+    min-height: 78px;
+
+    gap: 9px;
+
+    padding: 11px;
+  }
+
+  .ykst-summary-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ykst-summary-content strong {
+    font-size: 18px;
+  }
+
+  .ykst-performance-grid,
+  .ykst-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ykst-panel-header {
+    min-height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .ykst-map-placeholder {
+    min-height: 350px;
+
+    padding: 20px;
+  }
+
+  .ykst-intelligence-panel {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .ykst-intelligence-status {
+    margin-left: 54px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .ykst-dashboard-page {
+    padding: 10px;
+  }
+
+  .ykst-dashboard-eyebrow {
+    font-size: 8px;
+  }
+
+  .ykst-dashboard-header h1 {
+    font-size: 20px;
+  }
+
+  .ykst-dashboard-header p {
+    font-size: 10px;
+  }
+
+  .ykst-summary {
+    gap: 8px;
+  }
+
+  .ykst-summary-card {
+    gap: 7px;
+
+    padding: 9px;
+  }
+
+  .ykst-summary-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ykst-summary-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ykst-summary-content strong {
+    font-size: 17px;
+  }
+
+  .ykst-summary-content span {
+    font-size: 9px;
+  }
+
+  .ykst-summary-content small {
+    font-size: 7px;
+  }
+
+  .ykst-map-placeholder {
+    min-height: 320px;
+  }
+
+  .ykst-status-label {
+    font-size: 10px;
+  }
+
+  .ykst-status-row strong {
+    font-size: 13px;
+  }
+
+  .ykst-intelligence-status {
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ykst-summary-card,
+  .ykst-panel,
+  .ykst-server-status,
+  .ykst-view-all-button {
+    transition: none;
+  }
+
+  .ykst-live-indicator .ykst-status-dot {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes ykst-dashboard-pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.75);
+  }
+}

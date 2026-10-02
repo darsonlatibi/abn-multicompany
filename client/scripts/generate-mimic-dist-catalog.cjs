@@ -1,0 +1,420 @@
+const fs = require("node:fs");
+const path = require("node:path");
+const { execFileSync } = require("node:child_process");
+
+/* =========================================================
+   ABN MULTICOMPANY
+   MIMIC DIST CATALOG + ZIP GENERATOR
+
+   Script location:
+   client/scripts/generate-mimic-dist-catalog.cjs
+
+   Build source:
+   client/dist
+
+   Catalog output:
+   client/src/data/mimicDistCatalog.ts
+
+   ZIP output:
+   project-root/abn-multicompany-dist.zip
+
+   IMPORTANT:
+   - Tidak menggunakan folder products
+   - Tidak membaca SVG source
+   - Tidak membuat PNG
+   - Hanya membaca client/dist
+   - ZIP disimpan di root project
+   ========================================================= */
+
+const clientRoot = path.resolve(__dirname, "..");
+
+const projectRoot = path.resolve(clientRoot, "..");
+
+const distRoot = path.join(clientRoot, "dist");
+
+const catalogFile = path.join(clientRoot, "src", "data", "mimicDistCatalog.ts");
+
+const zipFile = path.join(projectRoot, "abn-multicompany-dist.zip");
+
+/* =========================================================
+   FORMAT SIZE
+   ========================================================= */
+
+function formatSize(bytes) {
+  if (bytes < 1024) {
+    return `${bytes} B`;
+  }
+
+  if (bytes < 1024 * 1024) {
+    return `${(bytes / 1024).toFixed(1)} KB`;
+  }
+
+  if (bytes < 1024 * 1024 * 1024) {
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  }
+
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(2)} GB`;
+}
+
+/* =========================================================
+   COUNT FILES
+   ========================================================= */
+
+function countFiles(directory) {
+  if (!fs.existsSync(directory)) {
+    return 0;
+  }
+
+  let total = 0;
+
+  const entries = fs.readdirSync(directory, {
+    withFileTypes: true,
+  });
+
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      total += countFiles(fullPath);
+
+      continue;
+    }
+
+    if (entry.isFile()) {
+      total += 1;
+    }
+  }
+
+  return total;
+}
+
+/* =========================================================
+   DIRECTORY SIZE
+   ========================================================= */
+
+function getDirectorySize(directory) {
+  if (!fs.existsSync(directory)) {
+    return 0;
+  }
+
+  let total = 0;
+
+  const entries = fs.readdirSync(directory, {
+    withFileTypes: true,
+  });
+
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      total += getDirectorySize(fullPath);
+
+      continue;
+    }
+
+    if (entry.isFile()) {
+      total += fs.statSync(fullPath).size;
+    }
+  }
+
+  return total;
+}
+
+/* =========================================================
+   LIST FILES
+   ========================================================= */
+
+function listFiles(directory, baseDirectory = directory) {
+  if (!fs.existsSync(directory)) {
+    return [];
+  }
+
+  const results = [];
+
+  const entries = fs.readdirSync(directory, {
+    withFileTypes: true,
+  });
+
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      results.push(...listFiles(fullPath, baseDirectory));
+
+      continue;
+    }
+
+    if (entry.isFile()) {
+      results.push(
+        path.relative(baseDirectory, fullPath).split(path.sep).join("/"),
+      );
+    }
+  }
+
+  return results.sort();
+}
+
+/* =========================================================
+   VALIDATE DIST
+   ========================================================= */
+
+function validateDist() {
+  if (!fs.existsSync(distRoot)) {
+    console.error("❌ Folder dist tidak ditemukan:");
+
+    console.error(distRoot);
+
+    console.error("");
+
+    console.error("Jalankan npm run build terlebih dahulu.");
+
+    process.exit(1);
+  }
+
+  const indexFile = path.join(distRoot, "index.html");
+
+  if (!fs.existsSync(indexFile)) {
+    console.error("❌ index.html tidak ditemukan:");
+
+    console.error(indexFile);
+
+    process.exit(1);
+  }
+}
+
+/* =========================================================
+   BUILD CATALOG ENTRY
+   ========================================================= */
+
+function buildCatalogEntry() {
+  const fileCount = countFiles(distRoot);
+
+  const sizeBytes = getDirectorySize(distRoot);
+
+  const files = listFiles(distRoot);
+
+  return {
+    id: "abn-multicompany-dist",
+
+    title: "ABN Multicompany",
+
+    type: "dist",
+
+    distPath: "client/dist",
+
+    zipFile: "abn-multicompany-dist.zip",
+
+    fileCount,
+
+    sizeBytes,
+
+    size: formatSize(sizeBytes),
+
+    hasIndex: files.includes("index.html"),
+
+    files,
+  };
+}
+
+/* =========================================================
+   GENERATE TYPESCRIPT CATALOG
+   ========================================================= */
+
+function generateCatalog(entry) {
+  const lines = [];
+
+  lines.push("// AUTO-GENERATED FILE.");
+
+  lines.push("// DO NOT EDIT MANUALLY.");
+
+  lines.push("// Generated by client/scripts/generate-mimic-dist-catalog.cjs");
+
+  lines.push("");
+
+  lines.push("export interface MimicDistAsset {");
+
+  lines.push("  id: string;");
+
+  lines.push("  title: string;");
+
+  lines.push("  type: string;");
+
+  lines.push("  distPath: string;");
+
+  lines.push("  zipFile: string;");
+
+  lines.push("  fileCount: number;");
+
+  lines.push("  sizeBytes: number;");
+
+  lines.push("  size: string;");
+
+  lines.push("  hasIndex: boolean;");
+
+  lines.push("  files: string[];");
+
+  lines.push("}");
+
+  lines.push("");
+
+  lines.push("export const mimicDistCatalog: MimicDistAsset[] = [");
+
+  lines.push("  {");
+
+  lines.push(`    id: ${JSON.stringify(entry.id)},`);
+
+  lines.push(`    title: ${JSON.stringify(entry.title)},`);
+
+  lines.push(`    type: ${JSON.stringify(entry.type)},`);
+
+  lines.push(`    distPath: ${JSON.stringify(entry.distPath)},`);
+
+  lines.push(`    zipFile: ${JSON.stringify(entry.zipFile)},`);
+
+  lines.push(`    fileCount: ${entry.fileCount},`);
+
+  lines.push(`    sizeBytes: ${entry.sizeBytes},`);
+
+  lines.push(`    size: ${JSON.stringify(entry.size)},`);
+
+  lines.push(`    hasIndex: ${entry.hasIndex},`);
+
+  lines.push(
+    `    files: ${JSON.stringify(entry.files, null, 2).replace(
+      /^/gm,
+      "    ",
+    )},`,
+  );
+
+  lines.push("  },");
+
+  lines.push("];");
+
+  lines.push("");
+
+  fs.mkdirSync(path.dirname(catalogFile), {
+    recursive: true,
+  });
+
+  fs.writeFileSync(catalogFile, lines.join("\n"), "utf8");
+}
+
+/* =========================================================
+   CREATE ZIP
+   ========================================================= */
+
+function createZip() {
+  if (fs.existsSync(zipFile)) {
+    fs.unlinkSync(zipFile);
+  }
+
+  console.log("");
+  console.log("📦 Membuat ZIP dari client/dist...");
+
+  /*
+   * Windows PowerShell:
+   * Compress-Archive
+   *
+   * Isi ZIP:
+   * dist contents langsung berada
+   * di root ZIP.
+   */
+
+  execFileSync(
+    "powershell.exe",
+    [
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      `$ErrorActionPreference = 'Stop'; ` +
+        `Compress-Archive ` +
+        `-Path '${distRoot}\\*' ` +
+        `-DestinationPath '${zipFile}' ` +
+        `-Force`,
+    ],
+    {
+      stdio: "inherit",
+    },
+  );
+
+  if (!fs.existsSync(zipFile)) {
+    throw new Error("ZIP gagal dibuat.");
+  }
+
+  const zipSize = fs.statSync(zipFile).size;
+
+  return {
+    sizeBytes: zipSize,
+    size: formatSize(zipSize),
+  };
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+function main() {
+  console.log("");
+
+  console.log("========================================");
+
+  console.log(" ABN MULTICOMPANY DIST CATALOG");
+
+  console.log("========================================");
+
+  console.log("");
+
+  console.log(`Project : ${projectRoot}`);
+
+  console.log(`Dist    : ${distRoot}`);
+
+  console.log(`Catalog : ${catalogFile}`);
+
+  console.log(`ZIP     : ${zipFile}`);
+
+  console.log("");
+
+  console.log("🔎 Memeriksa hasil build...");
+
+  validateDist();
+
+  console.log("✅ client/dist ditemukan");
+
+  const entry = buildCatalogEntry();
+
+  console.log("");
+
+  console.log(`📄 Files : ${entry.fileCount}`);
+
+  console.log(`📐 Dist  : ${entry.size}`);
+
+  console.log(`📋 index : ${entry.hasIndex ? "YES" : "NO"}`);
+
+  generateCatalog(entry);
+
+  console.log("✅ Catalog generated");
+
+  const zip = createZip();
+
+  console.log("✅ ZIP berhasil dibuat");
+
+  console.log("");
+
+  console.log("========================================");
+
+  console.log("✅ COMPLETE");
+
+  console.log("========================================");
+
+  console.log("");
+
+  console.log(`Catalog : ${catalogFile}`);
+
+  console.log(`ZIP     : ${zipFile}`);
+
+  console.log(`ZIP Size: ${zip.size}`);
+
+  console.log("");
+}
+
+main();

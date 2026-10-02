@@ -1,0 +1,1231 @@
+/* =========================================================
+   AI SCADA PAGE
+   ========================================================= */
+
+.ai-scada-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(14, 165, 233, 0.08),
+      transparent 32%
+    ),
+    #f5f7fb;
+
+  color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ai-scada-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ai-scada-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ai-scada-title-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #082f49, #0284c7);
+
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+}
+
+.ai-scada-eyebrow {
+  margin-bottom: 4px;
+
+  color: #0284c7;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.ai-scada-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.ai-scada-header p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.ai-scada-refresh {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+
+  background: white;
+
+  color: #334155;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.ai-scada-refresh:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.ai-scada-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 16px;
+
+  margin-bottom: 18px;
+
+  border-radius: 13px;
+
+  background: #082f49;
+  color: white;
+
+  box-shadow: 0 8px 25px rgba(8, 47, 73, 0.16);
+}
+
+.scada-status-left,
+.scada-status-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scada-status-left strong {
+  display: block;
+  font-size: 13px;
+}
+
+.scada-status-left span:not(.scada-status-dot) {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #bae6fd;
+
+  font-size: 11px;
+}
+
+.scada-status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.12);
+}
+
+.scada-status-right {
+  flex-wrap: wrap;
+
+  color: #bae6fd;
+
+  font-size: 11px;
+}
+
+.scada-status-right span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.ai-scada-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.ai-scada-kpi-card {
+  padding: 17px;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ai-scada-kpi-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.ai-scada-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-scada-kpi-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #ecfeff;
+
+  color: #0284c7;
+}
+
+.scada-kpi-trend {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.scada-kpi-trend.up {
+  color: #16a34a;
+}
+
+.scada-kpi-trend.down {
+  color: #dc2626;
+}
+
+.scada-kpi-trend.stable {
+  color: #64748b;
+}
+
+.ai-scada-kpi-value {
+  margin-top: 16px;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.ai-scada-kpi-label {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   COPILOT
+   ========================================================= */
+
+.ai-scada-copilot {
+  margin-bottom: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid #dfe6f0;
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.scada-copilot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #edf1f6;
+}
+
+.scada-copilot-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scada-copilot-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #ecfeff;
+
+  color: #0284c7;
+}
+
+.scada-copilot-header h2 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.scada-copilot-header p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.scada-ai-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: #ecfdf5;
+
+  color: #15803d;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CHAT
+   ========================================================= */
+
+.scada-chat {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 20px;
+}
+
+.scada-chat-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, #075985, #0284c7);
+
+  color: white;
+}
+
+.scada-chat-content {
+  flex: 1;
+}
+
+.scada-chat-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.scada-chat-name span {
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.scada-chat-message {
+  max-width: 850px;
+
+  margin-top: 8px;
+
+  padding: 13px 15px;
+
+  border: 1px solid #e7edf5;
+  border-radius: 12px;
+
+  background: #f8fafc;
+}
+
+.scada-chat-message strong {
+  font-size: 13px;
+}
+
+.scada-chat-message p {
+  margin: 6px 0 10px;
+
+  color: #475569;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.scada-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.scada-capabilities span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+
+  background: white;
+
+  color: #475569;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   SUGGESTIONS
+   ========================================================= */
+
+.scada-suggestions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  padding: 0 20px 15px;
+}
+
+.scada-suggestions > span {
+  margin-right: 3px;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scada-suggestions button {
+  padding: 7px 10px;
+
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+
+  background: white;
+
+  color: #475569;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.scada-suggestions button:hover {
+  border-color: #38bdf8;
+
+  background: #ecfeff;
+
+  color: #0369a1;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.ai-scada-input {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 0 20px 20px;
+
+  padding: 5px 6px 5px 13px;
+
+  border: 1px solid #dce3ed;
+  border-radius: 11px;
+
+  color: #94a3b8;
+
+  transition: border-color 0.2s ease;
+}
+
+.ai-scada-input:focus-within {
+  border-color: #0284c7;
+
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.08);
+}
+
+.ai-scada-input input {
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 12px;
+}
+
+.ai-scada-input input::placeholder {
+  color: #94a3b8;
+}
+
+.scada-send-button {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #0284c7;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.scada-send-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.scada-spin {
+  animation: scada-spin 1s linear infinite;
+}
+
+@keyframes scada-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   AI ANSWER
+   ========================================================= */
+
+.scada-ai-answer {
+  margin: 0 20px 20px;
+
+  padding: 15px;
+
+  border: 1px solid #bae6fd;
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, #f0f9ff, #ecfeff);
+}
+
+.scada-answer-header {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #0369a1;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.scada-confidence {
+  margin-left: auto;
+
+  padding: 4px 7px;
+
+  border-radius: 6px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-size: 9px;
+}
+
+.scada-question {
+  display: flex;
+  gap: 5px;
+
+  margin-top: 11px;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+.scada-ai-answer > p {
+  margin: 9px 0;
+
+  color: #475569;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.scada-diagnosis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  margin-top: 11px;
+}
+
+.diagnosis-item {
+  padding: 10px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+
+  background: white;
+}
+
+.diagnosis-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.diagnosis-item strong {
+  color: #334155;
+
+  font-size: 10px;
+}
+
+.scada-recommendation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-top: 10px;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  border: 1px solid #dbeafe;
+}
+
+.scada-recommendation strong {
+  color: #0369a1;
+
+  font-size: 10px;
+}
+
+.scada-recommendation span {
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.ai-scada-main-grid {
+  display: grid;
+
+  grid-template-columns: 1.3fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.ai-scada-process,
+.ai-scada-health {
+  padding: 18px;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.scada-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.scada-section-heading > div:first-child span {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.scada-section-heading h2 {
+  margin: 3px 0 0;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   PROCESS METRICS
+   ========================================================= */
+
+.process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 9px;
+}
+
+.process-metric {
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.process-metric-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.process-metric-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #0284c7;
+}
+
+.process-status {
+  padding: 4px 7px;
+
+  border-radius: 6px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.process-status.watch {
+  background: #fef3c7;
+
+  color: #b45309;
+}
+
+.process-value {
+  margin-top: 11px;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.process-label {
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.process-progress {
+  height: 4px;
+
+  margin-top: 10px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e2e8f0;
+}
+
+.process-progress span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #0284c7;
+}
+
+/* =========================================================
+   HEALTH
+   ========================================================= */
+
+.health-score {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+}
+
+.health-circle {
+  width: 65px;
+  height: 65px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 6px solid #86efac;
+  border-radius: 50%;
+
+  background: #f0fdf4;
+}
+
+.health-circle strong {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.health-circle span {
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+.health-score > div:last-child strong {
+  font-size: 12px;
+}
+
+.health-score p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.health-factors {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.health-factors > div {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  font-size: 10px;
+}
+
+.health-factors span {
+  flex: 1;
+}
+
+.health-factors b {
+  color: #16a34a;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   INSIGHTS
+   ========================================================= */
+
+.ai-scada-insights {
+  padding: 18px;
+
+  border: 1px solid #e4e9f1;
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.scada-live {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #16a34a;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scada-live span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+.scada-insight-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.scada-insight-card {
+  padding: 15px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  background: white;
+}
+
+.scada-insight-card.critical {
+  border-left: 4px solid #dc2626;
+}
+
+.scada-insight-card.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.scada-insight-card.info {
+  border-left: 4px solid #0284c7;
+}
+
+.scada-insight-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scada-severity {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.critical .scada-severity {
+  color: #dc2626;
+}
+
+.warning .scada-severity {
+  color: #d97706;
+}
+
+.info .scada-severity {
+  color: #0284c7;
+}
+
+.scada-insight-top > span {
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.scada-insight-card h3 {
+  margin: 10px 0 5px;
+
+  font-size: 13px;
+}
+
+.equipment-tag {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #e0f2fe;
+
+  color: #0369a1;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.scada-insight-card > p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+.scada-insight-action {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-top: 12px;
+
+  padding: 9px;
+
+  border-radius: 7px;
+
+  background: #f8fafc;
+}
+
+.scada-insight-action strong {
+  color: #475569;
+
+  font-size: 9px;
+}
+
+.scada-insight-action span {
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+.scada-insight-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 11px;
+  padding-top: 9px;
+
+  border-top: 1px solid #edf1f5;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.scada-insight-footer b {
+  color: #16a34a;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.ai-scada-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  padding: 18px 10px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .ai-scada-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-scada-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .ai-scada-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .ai-scada-refresh {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .ai-scada-status {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .scada-status-right {
+    flex-wrap: wrap;
+  }
+
+  .scada-insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scada-diagnosis {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-scada-page {
+    padding: 12px;
+  }
+
+  .ai-scada-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-scada-header h1 {
+    font-size: 23px;
+  }
+
+  .ai-scada-title-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .scada-copilot-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .scada-suggestions {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .scada-suggestions > span {
+    margin-bottom: 2px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

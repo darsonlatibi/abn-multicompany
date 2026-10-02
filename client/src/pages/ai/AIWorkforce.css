@@ -1,0 +1,910 @@
+/* =========================================================
+ * AI WORKFORCE PAGE
+ * ========================================================= */
+
+.ai-workforce-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  background: #f6f8fb;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+ * HEADER
+ * ========================================================= */
+
+.ai-workforce-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.ai-workforce-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.ai-workforce-header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.ai-workforce-header h1 span {
+  font-weight: 500;
+}
+
+.ai-workforce-header p {
+  max-width: 780px;
+  margin: 9px 0 0;
+  color: #687386;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-workforce-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ai-workforce-refresh:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+ * STATUS
+ * ========================================================= */
+
+.ai-workforce-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 42px;
+  padding: 0 14px;
+  margin-bottom: 18px;
+  border: 1px solid #dce2ea;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-status-left,
+.ai-workforce-status-right {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #687386;
+  font-size: 12px;
+}
+
+.ai-workforce-status-left strong {
+  color: #253044;
+}
+
+.ai-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22a06b;
+  box-shadow: 0 0 0 4px rgba(34, 160, 107, 0.1);
+}
+
+.ai-status-divider {
+  width: 1px;
+  height: 14px;
+  background: #e1e6ed;
+}
+
+.ai-workforce-status-right {
+  color: #4c5d75;
+  font-weight: 700;
+}
+
+/* =========================================================
+ * KPI
+ * ========================================================= */
+
+.ai-workforce-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ai-workforce-kpi-card {
+  padding: 17px;
+  border: 1px solid #dfe5ec;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(20, 31, 50, 0.03);
+}
+
+.ai-workforce-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ai-workforce-kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #f0f3f7;
+  color: #344054;
+}
+
+.ai-workforce-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ai-workforce-trend.positive {
+  color: #16865b;
+}
+
+.ai-workforce-trend.negative {
+  color: #c45555;
+}
+
+.ai-workforce-kpi-value {
+  margin-bottom: 3px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.ai-workforce-kpi-label {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ai-workforce-kpi-description {
+  margin-top: 5px;
+  color: #7a8596;
+  font-size: 11px;
+}
+
+/* =========================================================
+ * COPILOT
+ * ========================================================= */
+
+.ai-workforce-copilot {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #dfe5ec;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(20, 31, 50, 0.04);
+}
+
+.ai-workforce-copilot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 17px;
+}
+
+.ai-workforce-copilot-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-workforce-copilot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eef2f6;
+  color: #344054;
+}
+
+.ai-workforce-copilot-title h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.ai-workforce-copilot-title p {
+  margin: 4px 0 0;
+  color: #7a8596;
+  font-size: 12px;
+}
+
+.ai-workforce-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid #dce2ea;
+  border-radius: 7px;
+  color: #59667a;
+  background: #fafbfc;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ai-workforce-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.ai-workforce-suggestions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid #dfe5ec;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #59667a;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ai-workforce-suggestions button:hover {
+  background: #f7f9fb;
+  border-color: #cfd6df;
+}
+
+.ai-workforce-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 7px 0 13px;
+  border: 1px solid #d8dee7;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-chat-input > svg {
+  color: #8b95a5;
+  flex-shrink: 0;
+}
+
+.ai-workforce-chat-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #253044;
+  background: transparent;
+  font-size: 13px;
+}
+
+.ai-workforce-chat-input input::placeholder {
+  color: #9aa3b1;
+}
+
+.ai-workforce-chat-input button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #26354d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-workforce-chat-input button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ai-workforce-answer {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #e0e5eb;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.ai-workforce-answer-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ai-workforce-answer-content strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.ai-workforce-answer-content p {
+  margin: 0;
+  color: #687386;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ai-workforce-answer-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: #697586;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ai-workforce-thinking {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #687386;
+  font-size: 12px;
+}
+
+.ai-workforce-thinking span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #687386;
+  animation: ai-workforce-pulse 1s infinite ease-in-out;
+}
+
+.ai-workforce-thinking span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.ai-workforce-thinking span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes ai-workforce-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+ * SECTION HEADING
+ * ========================================================= */
+
+.ai-workforce-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.ai-workforce-section-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #7b8797;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.ai-workforce-section-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ai-workforce-section-heading p {
+  margin: 5px 0 0;
+  color: #7a8596;
+  font-size: 12px;
+}
+
+/* =========================================================
+ * WORKFORCE HEALTH
+ * ========================================================= */
+
+.ai-workforce-health-section {
+  margin-bottom: 20px;
+}
+
+.ai-workforce-health-score {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dfe5ec;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.ai-workforce-health-score span {
+  color: #7a8596;
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.ai-workforce-health-score strong {
+  font-size: 24px;
+}
+
+.ai-workforce-health-score small {
+  color: #8a94a3;
+  font-size: 11px;
+}
+
+.ai-workforce-health-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-workforce-health-card {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #dfe5ec;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-health-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #f1f4f7;
+}
+
+.ai-workforce-health-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.ai-workforce-health-info span {
+  color: #697586;
+  font-size: 11px;
+}
+
+.ai-workforce-health-info strong {
+  grid-row: span 2;
+  font-size: 19px;
+}
+
+.ai-workforce-health-info small {
+  color: #17865b;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ai-workforce-progress {
+  width: 100%;
+  height: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #edf0f3;
+}
+
+.ai-workforce-progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: #59677b;
+}
+
+/* =========================================================
+ * SNAPSHOT
+ * ========================================================= */
+
+.ai-workforce-snapshot {
+  margin-bottom: 20px;
+}
+
+.ai-workforce-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-workforce-snapshot-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #dfe5ec;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-snapshot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #f1f4f7;
+}
+
+.ai-workforce-snapshot-card span {
+  display: block;
+  color: #7b8797;
+  font-size: 11px;
+}
+
+.ai-workforce-snapshot-card strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 20px;
+}
+
+.ai-workforce-snapshot-card small {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 3px;
+  color: #c45555;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ai-workforce-snapshot-card small.positive {
+  color: #17865b;
+}
+
+/* =========================================================
+ * RISK
+ * ========================================================= */
+
+.ai-workforce-risk-section {
+  margin-bottom: 20px;
+}
+
+.ai-workforce-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-workforce-risk-card {
+  padding: 15px;
+  border: 1px solid #dfe5ec;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-risk-card.critical {
+  border-left: 3px solid #c64f4f;
+}
+
+.ai-workforce-risk-card.high {
+  border-left: 3px solid #d17a3c;
+}
+
+.ai-workforce-risk-card.medium {
+  border-left: 3px solid #b18b35;
+}
+
+.ai-workforce-risk-card.low {
+  border-left: 3px solid #4b8c70;
+}
+
+.ai-workforce-risk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ai-workforce-risk-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f2f4f6;
+}
+
+.ai-workforce-severity {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.ai-workforce-risk-card h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.ai-workforce-risk-category {
+  margin-top: 4px;
+  color: #8993a1;
+  font-size: 10px;
+}
+
+.ai-workforce-risk-value {
+  margin-top: 13px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.ai-workforce-risk-card p {
+  min-height: 52px;
+  margin: 7px 0 14px;
+  color: #707b8c;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.ai-workforce-risk-footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 11px;
+  border-top: 1px solid #edf0f3;
+  color: #8993a1;
+  font-size: 10px;
+}
+
+.ai-workforce-risk-footer strong {
+  color: #4e596a;
+}
+
+.ai-workforce-risk-footer button {
+  margin-left: auto;
+  padding: 6px 8px;
+  border: 1px solid #dce2e9;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #465267;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ai-workforce-risk-footer button:hover {
+  background: #f7f9fb;
+}
+
+/* =========================================================
+ * INSIGHTS
+ * ========================================================= */
+
+.ai-workforce-insights-section {
+  margin-bottom: 20px;
+}
+
+.ai-workforce-insights-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ai-workforce-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dfe5ec;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.ai-workforce-insight.critical {
+  border-left: 3px solid #c64f4f;
+}
+
+.ai-workforce-insight.warning {
+  border-left: 3px solid #c88636;
+}
+
+.ai-workforce-insight.info {
+  border-left: 3px solid #5d738e;
+}
+
+.ai-workforce-insight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f1f4f7;
+}
+
+.ai-workforce-insight-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-workforce-insight-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ai-workforce-insight-top h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.ai-workforce-insight-top span {
+  color: #7d8796;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ai-workforce-insight-content p {
+  margin: 5px 0 8px;
+  color: #707b8c;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.ai-workforce-insight-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #778293;
+  font-size: 10px;
+}
+
+.ai-workforce-insight-action strong {
+  color: #465267;
+}
+
+/* =========================================================
+ * FOOTER
+ * ========================================================= */
+
+.ai-workforce-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 2px 2px;
+  color: #8993a1;
+  font-size: 10px;
+}
+
+.ai-workforce-footer div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ai-workforce-footer strong {
+  color: #586477;
+}
+
+/* =========================================================
+ * RESPONSIVE
+ * ========================================================= */
+
+@media (max-width: 1200px) {
+  .ai-workforce-kpi-grid,
+  .ai-workforce-health-grid,
+  .ai-workforce-snapshot-grid,
+  .ai-workforce-risk-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .ai-workforce-header,
+  .ai-workforce-status,
+  .ai-workforce-copilot-header,
+  .ai-workforce-section-heading,
+  .ai-workforce-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ai-workforce-status {
+    padding: 12px 14px;
+  }
+
+  .ai-workforce-status-left {
+    flex-wrap: wrap;
+  }
+
+  .ai-workforce-status-right {
+    display: none;
+  }
+
+  .ai-workforce-footer {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ai-workforce-page {
+    padding: 15px;
+  }
+
+  .ai-workforce-kpi-grid,
+  .ai-workforce-health-grid,
+  .ai-workforce-snapshot-grid,
+  .ai-workforce-risk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-workforce-header h1 {
+    font-size: 25px;
+  }
+
+  .ai-workforce-chat-input {
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 9px;
+  }
+
+  .ai-workforce-chat-input input {
+    min-width: calc(100% - 35px);
+  }
+
+  .ai-workforce-chat-input button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ai-workforce-suggestions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .ai-workforce-suggestions button {
+    width: 100%;
+  }
+
+  .ai-workforce-insight-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

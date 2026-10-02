@@ -1,0 +1,1407 @@
+/* =========================================================
+   TONASA GROUP
+   TONASA LINES
+   MARINE LOGISTICS DASHBOARD
+   THEME AWARE
+   ========================================================= */
+
+.tl-dashboard-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.tl-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.tl-company-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.tl-company-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.tl-dashboard-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-info);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.tl-dashboard-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.tl-dashboard-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SERVER STATUS
+   ========================================================= */
+
+.tl-server-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 42px;
+
+  padding: 8px 13px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--theme-transition);
+}
+
+.tl-server-status strong {
+  display: block;
+
+  color: var(--status-success);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.tl-server-status small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   STATUS DOT
+   ========================================================= */
+
+.tl-status-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--text-muted);
+}
+
+.tl-status-dot.online,
+.sailing-dot {
+  background: var(--status-success);
+
+  box-shadow: 0 0 0 3px var(--status-success-bg);
+}
+
+.loading-dot {
+  background: #2563eb;
+}
+
+.anchored-dot {
+  background: #7c3aed;
+}
+
+.idle-dot {
+  background: #d97706;
+}
+
+.offline-dot {
+  background: #ef4444;
+}
+
+.alarm-dot {
+  background: #dc2626;
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* =========================================================
+   COMPANY BAR
+   ========================================================= */
+
+.tl-company-bar {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.tl-company-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.tl-company-badge {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.tl-company-info strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+}
+
+.tl-company-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.tl-live-state {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.tl-summary {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.tl-summary-card {
+  min-width: 0;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.tl-summary-card:hover {
+  background: var(--bg-surface-soft);
+
+  transform: translateY(-1px);
+}
+
+.tl-summary-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-secondary);
+}
+
+.tl-summary-content {
+  min-width: 0;
+}
+
+.tl-summary-content span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+.tl-summary-content strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.tl-summary-content small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   SUMMARY VARIANTS
+   ========================================================= */
+
+.tl-summary-card.active .tl-summary-icon {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.tl-summary-card.voyage .tl-summary-icon {
+  background: rgba(124, 58, 237, 0.1);
+
+  color: #7c3aed;
+}
+
+.tl-summary-card.cargo .tl-summary-icon {
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #2563eb;
+}
+
+.tl-summary-card.alert .tl-summary-icon {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.tl-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    330px;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.tl-panel {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.tl-panel-header {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tl-panel-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tl-panel-header p {
+  margin: 3px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   LIVE
+   ========================================================= */
+
+.tl-live-indicator {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.tl-live-indicator .tl-status-dot {
+  animation: tl-dashboard-pulse 1.5s infinite;
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.tl-map-placeholder {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background-color: #eef2f7;
+
+  background-image:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+.tl-map-placeholder::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 75%
+  );
+}
+
+.tl-map-placeholder > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+.tl-map-placeholder svg {
+  margin-bottom: 12px;
+
+  color: var(--text-info);
+}
+
+.tl-map-placeholder h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+}
+
+.tl-map-placeholder p {
+  max-width: 360px;
+
+  margin: 7px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.tl-map-placeholder span {
+  margin-top: 8px;
+
+  padding: 5px 8px;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .tl-map-placeholder {
+  background-color: #0b1220;
+
+  background-image:
+    linear-gradient(90deg, rgba(71, 85, 105, 0.16) 1px, transparent 1px),
+    linear-gradient(rgba(71, 85, 105, 0.16) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .tl-map-placeholder::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(51, 65, 85, 0.35) 0%,
+    rgba(30, 41, 59, 0.18) 45%,
+    transparent 75%
+  );
+}
+
+/* =========================================================
+   STATUS LIST
+   ========================================================= */
+
+.tl-status-list {
+  padding: 6px 16px 12px;
+}
+
+.tl-status-row {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tl-status-row:last-child {
+  border-bottom: 0;
+}
+
+.tl-status-label {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tl-status-row strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+.tl-performance-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.tl-performance-panel {
+  min-width: 0;
+}
+
+.tl-performance-panel .tl-panel-header svg {
+  color: var(--text-info);
+}
+
+.tl-performance-body {
+  min-height: 125px;
+
+  padding: 15px 16px;
+
+  box-sizing: border-box;
+}
+
+.tl-performance-value {
+  display: flex;
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-bottom: 13px;
+}
+
+.tl-performance-value strong {
+  color: var(--text-primary);
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.tl-performance-value span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.tl-progress {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--bg-surface-soft);
+}
+
+.tl-progress span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--text-info);
+
+  transition: width 0.3s ease;
+}
+
+.tl-performance-meta {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 9px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+.tl-fuel-placeholder {
+  padding: 8px;
+
+  border: 1px dashed var(--border-color);
+
+  border-radius: 6px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   VOYAGE PANEL
+   ========================================================= */
+
+.tl-voyage-panel {
+  margin-bottom: 16px;
+}
+
+.tl-view-all-button {
+  min-height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 10px;
+
+  background: var(--bg-surface-soft);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 6px;
+
+  color: var(--text-info);
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.tl-view-all-button:hover {
+  background: var(--accent-soft);
+
+  border-color: var(--border-color-focus);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.tl-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.tl-table {
+  width: 100%;
+
+  min-width: 680px;
+
+  border-collapse: collapse;
+}
+
+.tl-table th {
+  padding: 11px 16px;
+
+  background: var(--bg-surface-soft);
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-muted);
+
+  text-align: left;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.tl-table td {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+.tl-table tbody tr:hover {
+  background: var(--bg-surface-soft);
+}
+
+.tl-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tl-table td strong {
+  color: var(--text-primary);
+
+  font-size: 11px;
+}
+
+.tl-table tbody td[colspan] {
+  padding: 28px 16px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.tl-location-cell {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+.tl-location-cell svg {
+  color: var(--text-info);
+}
+
+/* =========================================================
+   VESSEL STATUS
+   ========================================================= */
+
+.tl-vessel-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.tl-vessel-status.sailing {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.tl-vessel-status.loading {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+}
+
+.tl-vessel-status.unloading {
+  background: #ede9fe;
+
+  color: #6d28d9;
+}
+
+.tl-vessel-status.anchored {
+  background: #ede9fe;
+
+  color: #6d28d9;
+}
+
+.tl-vessel-status.idle {
+  background: #fef3c7;
+
+  color: #a16207;
+}
+
+.tl-vessel-status.offline {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+.tl-vessel-status.alarm {
+  background: #ffe4e6;
+
+  color: #be123c;
+}
+
+[data-theme="dark"] .tl-vessel-status.sailing {
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #4ade80;
+}
+
+[data-theme="dark"] .tl-vessel-status.loading {
+  background: rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .tl-vessel-status.unloading,
+[data-theme="dark"] .tl-vessel-status.anchored {
+  background: rgba(124, 58, 237, 0.12);
+
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .tl-vessel-status.idle {
+  background: rgba(245, 158, 11, 0.12);
+
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .tl-vessel-status.offline {
+  background: rgba(239, 68, 68, 0.12);
+
+  color: #f87171;
+}
+
+[data-theme="dark"] .tl-vessel-status.alarm {
+  background: rgba(225, 29, 72, 0.12);
+
+  color: #fb7185;
+}
+
+/* =========================================================
+   CAPABILITY
+   ========================================================= */
+
+.tl-capability-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.tl-mini-panel {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 13px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 9px;
+}
+
+.tl-mini-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.tl-mini-panel strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 10px;
+}
+
+.tl-mini-panel span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   INTELLIGENCE
+   ========================================================= */
+
+.tl-intelligence-panel {
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 17px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+}
+
+.tl-intelligence-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.tl-intelligence-panel > div:nth-child(2) {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.tl-intelligence-panel span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-info);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.tl-intelligence-panel h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.tl-intelligence-panel p {
+  max-width: 760px;
+
+  margin: 5px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.tl-intelligence-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  flex-shrink: 0;
+
+  background: var(--status-success-bg);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   DARK STATUS
+   ========================================================= */
+
+[data-theme="dark"] .loading-dot {
+  background: #60a5fa;
+}
+
+[data-theme="dark"] .anchored-dot {
+  background: #a78bfa;
+}
+
+[data-theme="dark"] .idle-dot {
+  background: #fbbf24;
+}
+
+[data-theme="dark"] .offline-dot {
+  background: #f87171;
+}
+
+[data-theme="dark"] .alarm-dot {
+  background: #fb7185;
+}
+
+/* =========================================================
+   RESPONSIVE 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .tl-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tl-performance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tl-capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tl-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      290px;
+  }
+}
+
+/* =========================================================
+   TABLET 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .tl-dashboard-page {
+    padding: 18px;
+  }
+
+  .tl-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-map-placeholder {
+    min-height: 380px;
+  }
+
+  .tl-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .tl-dashboard-page {
+    padding: 15px;
+  }
+
+  .tl-dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .tl-dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .tl-dashboard-header p {
+    font-size: 11px;
+  }
+
+  .tl-server-status {
+    width: 100%;
+  }
+
+  .tl-company-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .tl-live-state {
+    align-self: flex-end;
+  }
+
+  .tl-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .tl-summary-card {
+    min-height: 78px;
+
+    gap: 9px;
+
+    padding: 11px;
+  }
+
+  .tl-summary-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tl-summary-content strong {
+    font-size: 18px;
+  }
+
+  .tl-performance-grid,
+  .tl-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-panel-header {
+    min-height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .tl-map-placeholder {
+    min-height: 350px;
+
+    padding: 20px;
+  }
+
+  .tl-intelligence-panel {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .tl-intelligence-status {
+    margin-left: 54px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .tl-dashboard-page {
+    padding: 10px;
+  }
+
+  .tl-dashboard-eyebrow {
+    font-size: 8px;
+  }
+
+  .tl-dashboard-header h1 {
+    font-size: 20px;
+  }
+
+  .tl-dashboard-header p {
+    font-size: 10px;
+  }
+
+  .tl-summary {
+    gap: 8px;
+  }
+
+  .tl-summary-card {
+    gap: 7px;
+
+    padding: 9px;
+  }
+
+  .tl-summary-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tl-summary-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tl-summary-content strong {
+    font-size: 17px;
+  }
+
+  .tl-summary-content span {
+    font-size: 9px;
+  }
+
+  .tl-summary-content small {
+    font-size: 7px;
+  }
+
+  .tl-map-placeholder {
+    min-height: 320px;
+  }
+
+  .tl-status-label {
+    font-size: 10px;
+  }
+
+  .tl-status-row strong {
+    font-size: 13px;
+  }
+
+  .tl-intelligence-status {
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-summary-card,
+  .tl-panel,
+  .tl-server-status,
+  .tl-view-all-button {
+    transition: none;
+  }
+
+  .tl-live-indicator .tl-status-dot {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes tl-dashboard-pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.75);
+  }
+}

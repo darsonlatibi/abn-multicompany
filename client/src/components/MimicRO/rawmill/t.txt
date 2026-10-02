@@ -1,0 +1,11 @@
+tetapi bentuknya lebih cocok untuk vertical/raw mill grinding system:
+
+Raw material inlet
+Grinding mill body
+Grinding table/roller
+Hot gas inlet
+Gas/material flow animation
+Separator di bagian atas
+Fine raw meal outlet
+Reject/coarse material return
+Main motor status

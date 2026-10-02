@@ -1,0 +1,1315 @@
+/* =========================================================
+   ABN FLEET SYSTEM
+   ALERTS PAGE
+   THEME AWARE
+   BOOTSTRAP SAFE
+   ========================================================= */
+
+.abn-alerts-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   LOCAL RESET
+   ========================================================= */
+
+.abn-alerts-page *,
+.abn-alerts-page *::before,
+.abn-alerts-page *::after {
+  box-sizing: border-box;
+}
+
+.abn-alerts-page button,
+.abn-alerts-page input,
+.abn-alerts-page select,
+.abn-alerts-page textarea {
+  font-family: inherit;
+}
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.abn-alerts-page .card {
+  width: 100%;
+  margin: 0;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  transition: var(--theme-transition);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.abn-alerts-page > .d-flex.justify-content-between.align-items-center.mb-3 {
+  width: 100%;
+  min-height: 52px;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 20px;
+
+  margin: 0 0 22px 0 !important;
+}
+
+.abn-alerts-page .alerts-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+}
+
+.abn-alerts-page .alerts-title i {
+  color: var(--text-info);
+}
+
+.abn-alerts-page .alerts-subtitle {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.abn-alerts-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+  padding: 9px 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+.abn-alerts-page .btn:hover:not(:disabled) {
+  border-color: var(--border-color-focus);
+  background: var(--bg-surface-soft);
+  color: var(--text-info);
+
+  transform: translateY(-1px);
+}
+
+.abn-alerts-page .btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.abn-alerts-page .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.abn-alerts-page > .alert {
+  width: 100%;
+
+  margin: 0 0 15px 0;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 8px;
+
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--text-primary);
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SUMMARY GRID
+   ========================================================= */
+
+.abn-alerts-page > .row:first-of-type {
+  display: grid !important;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+
+  margin: 0 0 15px 0 !important;
+
+  gap: 14px;
+}
+
+/* Kill Bootstrap column sizing */
+
+.abn-alerts-page > .row:first-of-type > [class*="col-"] {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* =========================================================
+   SUMMARY CARD
+   ========================================================= */
+
+.abn-alerts-page .alert-summary-card {
+  min-height: 78px;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.2s ease;
+}
+
+.abn-alerts-page .alert-summary-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--border-color-focus);
+
+  box-shadow: var(--shadow-md);
+}
+
+.abn-alerts-page .alert-summary-card .card-body {
+  min-height: 78px;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 14px 16px !important;
+}
+
+.abn-alerts-page
+  .alert-summary-card
+  .d-flex.justify-content-between.align-items-center {
+  width: 100%;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 12px;
+}
+
+.abn-alerts-page .alert-summary-label {
+  margin: 0 0 4px 0;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.abn-alerts-page .alert-summary-value {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.abn-alerts-page .alert-summary-card .fs-3 {
+  flex: 0 0 auto;
+
+  font-size: 24px !important;
+
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   SUMMARY SEMANTIC COLORS
+   ========================================================= */
+
+.abn-alerts-page .alert-summary-card.critical .fs-3 {
+  color: #ef4444;
+}
+
+.abn-alerts-page .alert-summary-card.warning .fs-3 {
+  color: #d97706;
+}
+
+.abn-alerts-page .alert-summary-card.info .fs-3 {
+  color: var(--text-info);
+}
+
+.abn-alerts-page .alert-summary-card.resolved .fs-3 {
+  color: var(--status-success);
+}
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.abn-alerts-page .alert-filter-card {
+  width: 100%;
+
+  margin: 0 0 15px 0;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.abn-alerts-page .alert-filter-card .card-header {
+  min-height: 48px;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  padding: 12px 16px !important;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.abn-alerts-page .alert-filter-card .card-header strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.abn-alerts-page .alert-filter-card .card-header i {
+  color: var(--text-muted);
+}
+
+.abn-alerts-page .alert-filter-card .card-body {
+  padding: 16px !important;
+
+  background: var(--bg-surface);
+}
+
+/* =========================================================
+   FILTER GRID
+   ========================================================= */
+
+.abn-alerts-page .alert-filter-card .row {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(180px, 1fr)
+    minmax(180px, 1fr);
+
+  width: 100%;
+
+  margin: 0 !important;
+
+  gap: 15px;
+}
+
+.abn-alerts-page .alert-filter-card .row > [class*="col-"] {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.abn-alerts-page .alert-filter-card .form-label {
+  display: block;
+
+  margin: 0 0 6px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.abn-alerts-page .alert-filter-card .form-control,
+.abn-alerts-page .alert-filter-card .form-select {
+  width: 100%;
+  min-height: 40px;
+
+  padding: 8px 11px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.abn-alerts-page .alert-filter-card .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.abn-alerts-page .alert-filter-card .form-control:hover,
+.abn-alerts-page .alert-filter-card .form-select:hover {
+  border-color: var(--border-color-focus);
+}
+
+.abn-alerts-page .alert-filter-card .form-control:focus,
+.abn-alerts-page .alert-filter-card .form-select:focus {
+  border-color: var(--border-color-focus);
+
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* =========================================================
+   ALERT LIST
+   ========================================================= */
+
+.abn-alerts-page .alert-list-card {
+  width: 100%;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  transition: var(--theme-transition);
+}
+
+.abn-alerts-page .alert-list-card .card-header {
+  min-height: 48px;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 12px 16px !important;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.abn-alerts-page .alert-list-card .card-header strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.abn-alerts-page .alert-list-card .card-header i {
+  color: var(--text-muted);
+}
+
+.abn-alerts-page .alert-list-card .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 28px;
+  height: 24px;
+
+  padding: 3px 8px;
+
+  border-radius: 999px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.abn-alerts-page .alert-list-card .card-body {
+  width: 100%;
+
+  padding: 0 !important;
+
+  background: var(--bg-surface);
+}
+
+.abn-alerts-page .alert-list-card .table-responsive {
+  width: 100%;
+
+  margin: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.abn-alerts-page .alert-table {
+  width: 100%;
+  min-width: 950px;
+
+  margin: 0;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  background: var(--bg-surface);
+}
+
+.abn-alerts-page .alert-table thead th {
+  padding: 12px 14px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+
+  background: var(--bg-surface-soft);
+
+  border-top: 0;
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.abn-alerts-page .alert-table tbody td {
+  padding: 13px 14px;
+
+  vertical-align: middle;
+
+  border-top: 0;
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.abn-alerts-page .alert-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.abn-alerts-page .alert-table tbody tr {
+  transition: background-color 0.12s ease;
+}
+
+.abn-alerts-page .alert-table tbody tr:hover td {
+  background: var(--bg-surface-soft);
+}
+
+/* =========================================================
+   COLUMN WIDTH
+   ========================================================= */
+
+.abn-alerts-page .alert-table th:nth-child(1),
+.abn-alerts-page .alert-table td:nth-child(1) {
+  width: 105px;
+}
+
+.abn-alerts-page .alert-table th:nth-child(2),
+.abn-alerts-page .alert-table td:nth-child(2) {
+  width: 150px;
+  min-width: 150px;
+}
+
+.abn-alerts-page .alert-table th:nth-child(3),
+.abn-alerts-page .alert-table td:nth-child(3) {
+  width: 170px;
+  min-width: 150px;
+}
+
+.abn-alerts-page .alert-table th:nth-child(4),
+.abn-alerts-page .alert-table td:nth-child(4) {
+  min-width: 260px;
+}
+
+.abn-alerts-page .alert-table th:nth-child(5),
+.abn-alerts-page .alert-table td:nth-child(5) {
+  width: 135px;
+  min-width: 135px;
+}
+
+.abn-alerts-page .alert-table th:nth-child(6),
+.abn-alerts-page .alert-table td:nth-child(6) {
+  width: 155px;
+  min-width: 155px;
+
+  white-space: nowrap;
+}
+
+.abn-alerts-page .alert-table th:nth-child(7),
+.abn-alerts-page .alert-table td:nth-child(7) {
+  width: 105px;
+  min-width: 105px;
+
+  white-space: nowrap;
+
+  text-align: right;
+}
+
+/* =========================================================
+   SEVERITY BADGE
+   ========================================================= */
+
+.abn-alerts-page .alert-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 78px;
+  height: 26px;
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.03em;
+
+  white-space: nowrap;
+}
+
+.abn-alerts-page .alert-critical {
+  color: #ffffff;
+  background: #dc3545;
+}
+
+.abn-alerts-page .alert-warning {
+  color: #212529;
+  background: #ffc107;
+}
+
+.abn-alerts-page .alert-info {
+  color: #ffffff;
+  background: #0d6efd;
+}
+
+/* =========================================================
+   STATUS BADGE
+   ========================================================= */
+
+.abn-alerts-page .alert-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+  height: 26px;
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.abn-alerts-page .alert-status-new {
+  color: #ffffff;
+  background: #dc3545;
+}
+
+.abn-alerts-page .alert-status-ack {
+  color: #212529;
+  background: #ffc107;
+}
+
+.abn-alerts-page .alert-status-resolved {
+  color: #ffffff;
+  background: #198754;
+}
+
+/* =========================================================
+   ALERT TYPE
+   ========================================================= */
+
+.abn-alerts-page .alert-type {
+  display: inline-block;
+
+  max-width: 100%;
+
+  padding: 4px 7px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary);
+
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  font-size: 11px;
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  vertical-align: middle;
+}
+
+/* =========================================================
+   ALERT TITLE
+   ========================================================= */
+
+.abn-alerts-page .alert-title {
+  display: block;
+
+  margin: 0 0 3px 0;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   ALERT MESSAGE
+   ========================================================= */
+
+.abn-alerts-page .alert-message {
+  max-width: 320px;
+
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   VEHICLE
+   ========================================================= */
+
+.abn-alerts-page .alert-vehicle-code {
+  display: inline-block;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.abn-alerts-page .alert-vehicle-plate {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.abn-alerts-page .alert-loading {
+  min-height: 260px;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 40px 20px;
+
+  color: var(--text-muted);
+}
+
+.abn-alerts-page .alert-loading .spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+.abn-alerts-page .alert-loading-text {
+  margin-top: 12px;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.abn-alerts-page .alert-empty-state {
+  min-height: 260px;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 40px 20px;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.abn-alerts-page .alert-empty-state-icon {
+  margin-bottom: 12px;
+
+  color: var(--status-success);
+
+  font-size: 40px;
+}
+
+/* =========================================================
+   DETAIL CARD
+   ========================================================= */
+
+.abn-alerts-page .alert-detail-card {
+  width: 100%;
+
+  margin: 15px 0 0 0;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  transition: var(--theme-transition);
+}
+
+.abn-alerts-page .alert-detail-card .card-header {
+  min-height: 48px;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 12px 16px !important;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.abn-alerts-page .alert-detail-card .card-header strong {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.abn-alerts-page .alert-detail-card .card-header i {
+  color: var(--text-info);
+}
+
+.abn-alerts-page .alert-detail-card .card-body {
+  padding: 20px !important;
+
+  background: var(--bg-surface);
+}
+
+/* =========================================================
+   DETAIL GRID
+   ========================================================= */
+
+.abn-alerts-page .alert-detail-card .row {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  width: 100%;
+
+  margin: 0 !important;
+
+  gap: 30px;
+}
+
+.abn-alerts-page .alert-detail-card .row > [class*="col-"] {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.abn-alerts-page .alert-detail-card p {
+  margin: 0 0 12px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.abn-alerts-page .alert-detail-card p:last-child {
+  margin-bottom: 0;
+}
+
+.abn-alerts-page .alert-detail-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* =========================================================
+   DETAIL HR
+   ========================================================= */
+
+.abn-alerts-page .alert-detail-card hr {
+  margin: 20px 0;
+
+  border: 0;
+  border-top: 1px solid var(--border-color);
+
+  opacity: 1;
+}
+
+/* =========================================================
+   DETAIL TITLE / MESSAGE
+   ========================================================= */
+
+.abn-alerts-page .alert-detail-card h5.alert-title {
+  margin: 0 0 8px 0;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.abn-alerts-page .alert-detail-card .alert-message {
+  max-width: none;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  white-space: normal;
+
+  overflow: visible;
+
+  text-overflow: clip;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.abn-alerts-page .alert-location {
+  display: inline-block;
+
+  max-width: 100%;
+
+  padding: 8px 12px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary);
+
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   METADATA
+   ========================================================= */
+
+.abn-alerts-page .alert-metadata {
+  max-height: 250px;
+
+  overflow: auto;
+
+  margin: 8px 0 0 0;
+  padding: 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  background: var(--bg-surface-soft);
+  color: var(--text-secondary);
+
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.abn-alerts-page .alert-actions {
+  width: 100%;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+
+  gap: 8px;
+
+  margin-top: 24px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.abn-alerts-page .alert-actions .btn {
+  min-height: 36px;
+  padding: 9px 14px;
+}
+
+.abn-alerts-page .alert-actions .ms-auto {
+  margin-left: auto !important;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.abn-alerts-page .table-responsive::-webkit-scrollbar,
+.abn-alerts-page .alert-metadata::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.abn-alerts-page .table-responsive::-webkit-scrollbar-track,
+.abn-alerts-page .alert-metadata::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.abn-alerts-page .table-responsive::-webkit-scrollbar-thumb,
+.abn-alerts-page .alert-metadata::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background: var(--border-color);
+}
+
+.abn-alerts-page .table-responsive::-webkit-scrollbar-thumb:hover,
+.abn-alerts-page .alert-metadata::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* =========================================================
+   DARK THEME - SEMANTIC OVERRIDES
+   ========================================================= */
+
+[data-theme="dark"] .abn-alerts-page .alert-critical,
+[data-theme="dark"] .abn-alerts-page .alert-status-new {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+[data-theme="dark"] .abn-alerts-page .alert-warning,
+[data-theme="dark"] .abn-alerts-page .alert-status-ack {
+  color: #fef3c7;
+  background: rgba(245, 158, 11, 0.18);
+}
+
+[data-theme="dark"] .abn-alerts-page .alert-info {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+[data-theme="dark"] .abn-alerts-page .alert-status-resolved {
+  color: #ffffff;
+  background: #15803d;
+}
+
+/* =========================================================
+   RESPONSIVE - 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .abn-alerts-page > .row:first-of-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abn-alerts-page .alert-filter-card .row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(180px, 1fr);
+  }
+
+  .abn-alerts-page .alert-filter-card .row > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   TABLET - 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .abn-alerts-page {
+    padding: 18px;
+  }
+
+  .abn-alerts-page > .row:first-of-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abn-alerts-page .alert-filter-card .row {
+    grid-template-columns: 1fr;
+  }
+
+  .abn-alerts-page .alert-filter-card .row > div:first-child {
+    grid-column: auto;
+  }
+
+  .abn-alerts-page .alert-detail-card .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE - 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .abn-alerts-page {
+    padding: 15px;
+  }
+
+  .abn-alerts-page > .d-flex.justify-content-between.align-items-center.mb-3 {
+    align-items: flex-start !important;
+  }
+
+  .abn-alerts-page .alerts-title {
+    font-size: 21px;
+  }
+
+  .abn-alerts-page .alerts-subtitle {
+    font-size: 12px;
+  }
+
+  .abn-alerts-page > .row:first-of-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .abn-alerts-page .alert-summary-card {
+    min-height: 70px;
+  }
+
+  .abn-alerts-page .alert-summary-card .card-body {
+    min-height: 70px;
+
+    padding: 11px !important;
+  }
+
+  .abn-alerts-page .alert-summary-value {
+    font-size: 18px;
+  }
+
+  .abn-alerts-page .alert-summary-card .fs-3 {
+    font-size: 21px !important;
+  }
+
+  .abn-alerts-page .alert-filter-card .card-body {
+    padding: 14px !important;
+  }
+
+  .abn-alerts-page .alert-detail-card .card-body {
+    padding: 16px !important;
+  }
+
+  .abn-alerts-page .alert-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .abn-alerts-page .alert-actions .btn {
+    width: 100%;
+  }
+
+  .abn-alerts-page .alert-actions .ms-auto {
+    margin-left: 0 !important;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE - 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .abn-alerts-page {
+    padding: 10px;
+  }
+
+  .abn-alerts-page > .d-flex.justify-content-between.align-items-center.mb-3 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    gap: 12px;
+  }
+
+  .abn-alerts-page
+    > .d-flex.justify-content-between.align-items-center.mb-3
+    > button {
+    width: 100%;
+  }
+
+  .abn-alerts-page .alerts-title {
+    font-size: 19px;
+  }
+
+  .abn-alerts-page > .row:first-of-type {
+    gap: 8px;
+  }
+
+  .abn-alerts-page .alert-summary-card {
+    min-height: 68px;
+  }
+
+  .abn-alerts-page .alert-summary-card .card-body {
+    min-height: 68px;
+
+    padding: 9px !important;
+  }
+
+  .abn-alerts-page .alert-summary-value {
+    font-size: 17px;
+  }
+
+  .abn-alerts-page .alert-summary-label {
+    font-size: 10px;
+  }
+
+  .abn-alerts-page .alert-summary-card .fs-3 {
+    font-size: 19px !important;
+  }
+
+  .abn-alerts-page .alert-detail-card h5.alert-title {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .abn-alerts-page *,
+  .abn-alerts-page *::before,
+  .abn-alerts-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

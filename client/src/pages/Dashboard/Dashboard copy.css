@@ -1,0 +1,757 @@
+/* =========================================================
+   ABN INDUSTRIAL INTELLIGENCE
+   TONASA EXECUTIVE DASHBOARD
+   THEME AWARE
+   ========================================================= */
+
+.dashboard-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.dashboard-header-main {
+  min-width: 0;
+}
+
+.dashboard-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-info);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 27px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.dashboard-header p {
+  margin: 7px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   HEADER STATUS
+   ========================================================= */
+
+.dashboard-header-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 190px;
+  padding: 10px 13px;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-status-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.dashboard-header-status strong {
+  display: block;
+  color: var(--status-success);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.dashboard-header-status span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+/* =========================================================
+   DEMO NOTICE
+   ========================================================= */
+
+.demo-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--text-info);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.demo-notice-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--text-info);
+}
+
+.demo-notice strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.demo-notice p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.dashboard-section {
+  margin-bottom: 22px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.section-heading > div:first-child {
+  min-width: 0;
+}
+
+.section-heading > div:first-child > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-info);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* =========================================================
+   PERIOD
+   ========================================================= */
+
+.period-selector {
+  min-width: 145px;
+  padding: 7px 11px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  text-align: right;
+}
+
+.period-selector span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.period-selector strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-primary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   KPI GRID
+   ========================================================= */
+
+.executive-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* =========================================================
+   KPI CARD
+   ========================================================= */
+
+.executive-kpi-card {
+  min-width: 0;
+  padding: 14px;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.executive-kpi-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-color-focus);
+  background: var(--bg-surface-soft);
+}
+
+.kpi-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.kpi-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--bg-surface-soft);
+  color: var(--text-info);
+}
+
+.kpi-label {
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.kpi-value {
+  margin-top: 14px;
+  color: var(--text-primary);
+  font-size: 25px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.kpi-value small {
+  margin-left: 2px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kpi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.kpi-footer > span:first-child {
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kpi-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.kpi-trend.up {
+  color: var(--status-success);
+}
+
+.kpi-trend.down {
+  color: #ef4444;
+}
+
+.kpi-trend.neutral {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   KPI ACCENTS
+   ========================================================= */
+
+.executive-kpi-card.production .kpi-icon {
+  background: var(--accent-soft);
+  color: var(--text-info);
+}
+
+.executive-kpi-card.availability .kpi-icon {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.executive-kpi-card.asset .kpi-icon {
+  background: rgba(59, 130, 246, 0.09);
+  color: #3b82f6;
+}
+
+.executive-kpi-card.energy .kpi-icon {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.executive-kpi-card.maintenance .kpi-icon {
+  background: rgba(139, 92, 246, 0.09);
+  color: #8b5cf6;
+}
+
+.executive-kpi-card.fleet .kpi-icon {
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.dashboard-panel {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.panel-header {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header > svg {
+  flex-shrink: 0;
+  color: var(--text-info);
+}
+
+.panel-eyebrow {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text-info);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.panel-header p {
+  margin: 3px 0 0;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+/* =========================================================
+   PRODUCTION
+   ========================================================= */
+
+.production-list {
+  padding: 5px 15px 10px;
+}
+
+.production-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.production-row:last-child {
+  border-bottom: 0;
+}
+
+.production-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.production-row-header strong {
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.production-status {
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.production-status.excellent {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.production-status.good {
+  background: rgba(59, 130, 246, 0.09);
+  color: #3b82f6;
+}
+
+.production-status.warning {
+  background: rgba(245, 158, 11, 0.11);
+  color: #d97706;
+}
+
+.production-progress {
+  width: 100%;
+  height: 6px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--bg-surface-soft);
+}
+
+.production-progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--status-success);
+}
+
+.production-progress-bar.good {
+  background: #3b82f6;
+}
+
+.production-progress-bar.warning {
+  background: #d97706;
+}
+
+.production-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 8px;
+}
+
+.production-meta strong {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+/* =========================================================
+   HEALTH
+   ========================================================= */
+
+.health-list {
+  padding: 5px 15px 10px;
+}
+
+.health-row {
+  min-height: 45px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.health-row:last-child {
+  border-bottom: 0;
+}
+
+.health-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.health-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.health-dot.good {
+  background: var(--status-success);
+  box-shadow: 0 0 0 3px var(--status-success-bg);
+}
+
+.health-dot.watch {
+  background: #d97706;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.health-row > strong {
+  color: var(--text-primary);
+  font-size: 11px;
+}
+
+.health-status {
+  min-width: 45px;
+  padding: 3px 5px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.health-status.good {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.health-status.watch {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+/* =========================================================
+   INTELLIGENCE
+   ========================================================= */
+
+.intelligence-section {
+  margin-bottom: 22px;
+}
+
+.intelligence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-surface);
+  color: var(--text-info);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.insight-card {
+  min-width: 0;
+  display: flex;
+  gap: 10px;
+  padding: 13px;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  box-shadow: var(--shadow-sm);
+}
+
+.insight-icon {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 7px;
+}
+
+.insight-card.warning .insight-icon {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.insight-card.success .insight-icon {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.insight-card.info .insight-icon {
+  background: var(--accent-soft);
+  color: var(--text-info);
+}
+
+.insight-content {
+  min-width: 0;
+}
+
+.insight-type {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.insight-card.warning .insight-type {
+  color: #d97706;
+}
+
+.insight-card.success .insight-type {
+  color: var(--status-success);
+}
+
+.insight-card.info .insight-type {
+  color: var(--text-info);
+}
+
+.insight-content h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.insight-content p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.insight-action {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-info);
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.insight-action:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BOTTOM GRID
+   ========================================================= */
+
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   ASSET INTELLIGENCE
+   ========================================================= */
+
+.asset-summary {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  padding: 15px;
+}
+
+.asset-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 130px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-surface-soft);
+}
+
+.asset-score strong {
+  color: var(--text-primary);
+  font-size: 27px;
+  font-weight: 750;
+  line-height: 1;
+}

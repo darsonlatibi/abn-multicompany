@@ -1,0 +1,1339 @@
+/* =========================================================
+   TONASA GROUP
+   PELABUHAN BIRINGKASSI INDONESIA
+   PORT OPERATIONAL DASHBOARD
+   THEME AWARE
+   ========================================================= */
+
+.pbi-dashboard-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pbi-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.pbi-company-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.pbi-company-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.pbi-dashboard-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-info);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.pbi-dashboard-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+}
+
+.pbi-dashboard-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SERVER STATUS
+   ========================================================= */
+
+.pbi-server-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 42px;
+
+  padding: 8px 13px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--theme-transition);
+}
+
+.pbi-server-status strong {
+  display: block;
+
+  color: var(--status-success);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.pbi-server-status small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   STATUS DOT
+   ========================================================= */
+
+.pbi-status-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--text-muted);
+}
+
+.pbi-status-dot.online,
+.running-dot {
+  background: var(--status-success);
+
+  box-shadow: 0 0 0 3px var(--status-success-bg);
+}
+
+.busy-dot {
+  background: #2563eb;
+}
+
+.idle-dot {
+  background: #d97706;
+}
+
+.maintenance-dot {
+  background: #7c3aed;
+}
+
+.alarm-dot {
+  background: #dc2626;
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* =========================================================
+   COMPANY BAR
+   ========================================================= */
+
+.pbi-company-bar {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.pbi-company-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.pbi-company-badge {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.pbi-company-info strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+}
+
+.pbi-company-info small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.pbi-live-state {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.pbi-summary {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.pbi-summary-card {
+  min-width: 0;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.pbi-summary-card:hover {
+  background: var(--bg-surface-soft);
+
+  transform: translateY(-1px);
+}
+
+.pbi-summary-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-secondary);
+}
+
+.pbi-summary-content {
+  min-width: 0;
+}
+
+.pbi-summary-content span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+.pbi-summary-content strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.pbi-summary-content small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   SUMMARY VARIANTS
+   ========================================================= */
+
+.pbi-summary-card.active .pbi-summary-icon {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.pbi-summary-card.operations .pbi-summary-icon {
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #2563eb;
+}
+
+.pbi-summary-card.cargo .pbi-summary-icon {
+  background: rgba(124, 58, 237, 0.1);
+
+  color: #7c3aed;
+}
+
+.pbi-summary-card.alert .pbi-summary-icon {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.pbi-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    330px;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.pbi-panel {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.pbi-panel-header {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pbi-panel-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pbi-panel-header p {
+  margin: 3px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   LIVE
+   ========================================================= */
+
+.pbi-live-indicator {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.pbi-live-indicator .pbi-status-dot {
+  animation: pbi-dashboard-pulse 1.5s infinite;
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.pbi-map-placeholder {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background-color: #eef2f7;
+
+  background-image:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+.pbi-map-placeholder::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 75%
+  );
+}
+
+.pbi-map-placeholder > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+.pbi-map-placeholder svg {
+  margin-bottom: 12px;
+
+  color: var(--text-info);
+}
+
+.pbi-map-placeholder h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+}
+
+.pbi-map-placeholder p {
+  max-width: 360px;
+
+  margin: 7px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.pbi-map-placeholder span {
+  margin-top: 8px;
+
+  padding: 5px 8px;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .pbi-map-placeholder {
+  background-color: #0b1220;
+
+  background-image:
+    linear-gradient(90deg, rgba(71, 85, 105, 0.16) 1px, transparent 1px),
+    linear-gradient(rgba(71, 85, 105, 0.16) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .pbi-map-placeholder::before {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(51, 65, 85, 0.35) 0%,
+    rgba(30, 41, 59, 0.18) 45%,
+    transparent 75%
+  );
+}
+
+/* =========================================================
+   STATUS LIST
+   ========================================================= */
+
+.pbi-status-list {
+  padding: 6px 16px 12px;
+}
+
+.pbi-status-row {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pbi-status-row:last-child {
+  border-bottom: 0;
+}
+
+.pbi-status-label {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pbi-status-row strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+.pbi-performance-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+}
+
+.pbi-performance-panel {
+  min-width: 0;
+}
+
+.pbi-performance-panel .pbi-panel-header svg {
+  color: var(--text-info);
+}
+
+.pbi-performance-body {
+  min-height: 125px;
+
+  padding: 15px 16px;
+
+  box-sizing: border-box;
+}
+
+.pbi-performance-value {
+  display: flex;
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-bottom: 13px;
+}
+
+.pbi-performance-value strong {
+  color: var(--text-primary);
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.pbi-performance-value span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.pbi-progress {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--bg-surface-soft);
+}
+
+.pbi-progress span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--text-info);
+
+  transition: width 0.3s ease;
+}
+
+.pbi-performance-meta {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 9px;
+
+  color: var(--text-muted);
+
+  font-size: 8px;
+}
+
+.pbi-placeholder {
+  padding: 8px;
+
+  border: 1px dashed var(--border-color);
+
+  border-radius: 6px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   EQUIPMENT PANEL
+   ========================================================= */
+
+.pbi-equipment-panel {
+  margin-bottom: 16px;
+}
+
+.pbi-view-all-button {
+  min-height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 10px;
+
+  background: var(--bg-surface-soft);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 6px;
+
+  color: var(--text-info);
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pbi-view-all-button:hover {
+  background: var(--accent-soft);
+
+  border-color: var(--border-color-focus);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.pbi-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.pbi-table {
+  width: 100%;
+
+  min-width: 700px;
+
+  border-collapse: collapse;
+}
+
+.pbi-table th {
+  padding: 11px 16px;
+
+  background: var(--bg-surface-soft);
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-muted);
+
+  text-align: left;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.pbi-table td {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+.pbi-table tbody tr:hover {
+  background: var(--bg-surface-soft);
+}
+
+.pbi-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.pbi-table td strong {
+  color: var(--text-primary);
+
+  font-size: 11px;
+}
+
+.pbi-table tbody td[colspan] {
+  padding: 28px 16px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.pbi-location-cell {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+.pbi-location-cell svg {
+  color: var(--text-info);
+}
+
+/* =========================================================
+   EQUIPMENT TYPE
+   ========================================================= */
+
+.pbi-equipment-type {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+}
+
+.pbi-equipment-type svg {
+  color: var(--text-info);
+}
+
+/* =========================================================
+   EQUIPMENT STATUS
+   ========================================================= */
+
+.pbi-equipment-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.pbi-equipment-status.operational {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.pbi-equipment-status.busy {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+}
+
+.pbi-equipment-status.idle {
+  background: #fef3c7;
+
+  color: #a16207;
+}
+
+.pbi-equipment-status.maintenance {
+  background: #ede9fe;
+
+  color: #6d28d9;
+}
+
+.pbi-equipment-status.offline {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+.pbi-equipment-status.alarm {
+  background: #ffe4e6;
+
+  color: #be123c;
+}
+
+[data-theme="dark"] .pbi-equipment-status.operational {
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #4ade80;
+}
+
+[data-theme="dark"] .pbi-equipment-status.busy {
+  background: rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .pbi-equipment-status.idle {
+  background: rgba(245, 158, 11, 0.12);
+
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .pbi-equipment-status.maintenance {
+  background: rgba(124, 58, 237, 0.12);
+
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .pbi-equipment-status.offline {
+  background: rgba(239, 68, 68, 0.12);
+
+  color: #f87171;
+}
+
+[data-theme="dark"] .pbi-equipment-status.alarm {
+  background: rgba(225, 29, 72, 0.12);
+
+  color: #fb7185;
+}
+
+/* =========================================================
+   INTELLIGENCE
+   ========================================================= */
+
+.pbi-intelligence-panel {
+  min-height: 88px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px 17px;
+
+  box-sizing: border-box;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+}
+
+.pbi-intelligence-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.pbi-intelligence-panel > div:nth-child(2) {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.pbi-intelligence-panel span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-info);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.pbi-intelligence-panel h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.pbi-intelligence-panel p {
+  max-width: 780px;
+
+  margin: 5px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.pbi-intelligence-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 9px;
+
+  flex-shrink: 0;
+
+  background: var(--status-success-bg);
+
+  border-radius: 5px;
+
+  color: var(--status-success);
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   DARK STATUS
+   ========================================================= */
+
+[data-theme="dark"] .busy-dot {
+  background: #60a5fa;
+}
+
+[data-theme="dark"] .idle-dot {
+  background: #fbbf24;
+}
+
+[data-theme="dark"] .maintenance-dot {
+  background: #a78bfa;
+}
+
+[data-theme="dark"] .alarm-dot {
+  background: #fb7185;
+}
+
+/* =========================================================
+   RESPONSIVE 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .pbi-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pbi-performance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pbi-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      290px;
+  }
+}
+
+/* =========================================================
+   TABLET 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .pbi-dashboard-page {
+    padding: 18px;
+  }
+
+  .pbi-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pbi-map-placeholder {
+    min-height: 380px;
+  }
+
+  .pbi-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .pbi-dashboard-page {
+    padding: 15px;
+  }
+
+  .pbi-dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .pbi-dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .pbi-dashboard-header p {
+    font-size: 11px;
+  }
+
+  .pbi-server-status {
+    width: 100%;
+  }
+
+  .pbi-company-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .pbi-live-state {
+    align-self: flex-end;
+  }
+
+  .pbi-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .pbi-summary-card {
+    min-height: 78px;
+
+    gap: 9px;
+
+    padding: 11px;
+  }
+
+  .pbi-summary-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pbi-summary-content strong {
+    font-size: 18px;
+  }
+
+  .pbi-performance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pbi-panel-header {
+    min-height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .pbi-map-placeholder {
+    min-height: 350px;
+
+    padding: 20px;
+  }
+
+  .pbi-intelligence-panel {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .pbi-intelligence-status {
+    margin-left: 54px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .pbi-dashboard-page {
+    padding: 10px;
+  }
+
+  .pbi-dashboard-eyebrow {
+    font-size: 8px;
+  }
+
+  .pbi-dashboard-header h1 {
+    font-size: 20px;
+  }
+
+  .pbi-dashboard-header p {
+    font-size: 10px;
+  }
+
+  .pbi-summary {
+    gap: 8px;
+  }
+
+  .pbi-summary-card {
+    gap: 7px;
+
+    padding: 9px;
+  }
+
+  .pbi-summary-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pbi-summary-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .pbi-summary-content strong {
+    font-size: 17px;
+  }
+
+  .pbi-summary-content span {
+    font-size: 9px;
+  }
+
+  .pbi-summary-content small {
+    font-size: 7px;
+  }
+
+  .pbi-map-placeholder {
+    min-height: 320px;
+  }
+
+  .pbi-status-label {
+    font-size: 10px;
+  }
+
+  .pbi-status-row strong {
+    font-size: 13px;
+  }
+
+  .pbi-intelligence-status {
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pbi-summary-card,
+  .pbi-panel,
+  .pbi-server-status,
+  .pbi-view-all-button {
+    transition: none;
+  }
+
+  .pbi-live-indicator .pbi-status-dot {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes pbi-dashboard-pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.75);
+  }
+}

@@ -1,0 +1,1780 @@
+/* =========================================================
+   ABN FLEET SYSTEM
+   PERHUBUNGAN / UPPKB / JTO MONITORING
+   THEME AWARE
+   ========================================================= */
+
+.perhubungan-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.perhubungan-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.perhubungan-header-left {
+  min-width: 0;
+}
+
+.perhubungan-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.perhubungan-title-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+}
+
+.perhubungan-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-info);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.perhubungan-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+}
+
+.perhubungan-header p {
+  margin: 6px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.perhubungan-header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   INTEGRATION STATUS
+   ========================================================= */
+
+.integration-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  white-space: nowrap;
+}
+
+.integration-status.online {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.integration-status.offline {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
+.perhubungan-refresh {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 36px;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: var(--bg-surface);
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.perhubungan-refresh:hover:not(:disabled) {
+  border-color: var(--border-color-focus);
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-info);
+}
+
+.perhubungan-refresh:active:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.perhubungan-refresh:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.perhubungan-spin {
+  animation: perhubungan-spin 0.8s linear infinite;
+}
+
+@keyframes perhubungan-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   SITE BAR
+   ========================================================= */
+
+.perhubungan-sitebar {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+
+  padding: 14px 16px;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--theme-transition);
+}
+
+/* =========================================================
+   SITE ITEM
+   ========================================================= */
+
+.sitebar-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.sitebar-item svg {
+  flex-shrink: 0;
+
+  color: var(--text-info);
+}
+
+.sitebar-item div {
+  min-width: 0;
+}
+
+.sitebar-item span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.sitebar-item strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sitebar-item small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   SITE LIVE
+   ========================================================= */
+
+.sitebar-live {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.sitebar-live-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  animation: perhubungan-live-pulse 1.5s infinite;
+}
+
+@keyframes perhubungan-live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.75);
+  }
+}
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.perhubungan-kpi-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.perhubungan-kpi-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 78px;
+
+  padding: 14px 16px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  transition: var(--theme-transition);
+}
+
+.perhubungan-kpi-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+
+  background: var(--text-muted);
+}
+
+.perhubungan-kpi-card.normal::before {
+  background: var(--status-success);
+}
+
+.perhubungan-kpi-card.overload::before {
+  background: #ef4444;
+}
+
+.perhubungan-kpi-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-secondary);
+}
+
+.perhubungan-kpi-card.normal .perhubungan-kpi-icon {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.perhubungan-kpi-card.overload .perhubungan-kpi-icon {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+.perhubungan-kpi-card > div:last-child {
+  min-width: 0;
+}
+
+.perhubungan-kpi-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+.perhubungan-kpi-card strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.perhubungan-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(320px, 0.85fr);
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.perhubungan-panel {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-surface);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--theme-transition);
+}
+
+.perhubungan-panel-header {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.perhubungan-panel-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.perhubungan-panel-header p {
+  margin: 3px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CAMERA
+   ========================================================= */
+
+.camera-panel {
+  min-width: 0;
+}
+
+.camera-live-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.camera-live-badge span {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  animation: perhubungan-camera-pulse 1.5s infinite;
+}
+
+@keyframes perhubungan-camera-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.camera-frame {
+  position: relative;
+
+  min-height: 325px;
+
+  margin: 14px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: #eef2f7;
+}
+
+[data-theme="dark"] .camera-frame {
+  background: #0b1220;
+}
+
+/* =========================================================
+   CAMERA GRID
+   ========================================================= */
+
+.camera-frame::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  pointer-events: none;
+}
+
+[data-theme="dark"] .camera-frame::after {
+  background:
+    linear-gradient(90deg, rgba(71, 85, 105, 0.14) 1px, transparent 1px),
+    linear-gradient(rgba(71, 85, 105, 0.14) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+
+/* =========================================================
+   CAMERA OVERLAY
+   ========================================================= */
+
+.camera-overlay {
+  position: absolute;
+
+  z-index: 4;
+
+  padding: 6px 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 4px;
+
+  background: rgba(15, 23, 42, 0.86);
+
+  color: #ffffff;
+
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  font-size: 9px;
+}
+
+.camera-overlay.top-left {
+  top: 10px;
+
+  left: 10px;
+}
+
+.camera-overlay.top-right {
+  top: 10px;
+
+  right: 10px;
+}
+
+.camera-overlay.center-top {
+  top: 10px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.camera-overlay.bottom-left {
+  left: 10px;
+
+  bottom: 10px;
+}
+
+.camera-overlay.bottom-right {
+  right: 10px;
+
+  bottom: 10px;
+}
+
+/* =========================================================
+   CAMERA PLACEHOLDER
+   ========================================================= */
+
+.camera-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--text-muted);
+
+  text-align: center;
+}
+
+.camera-placeholder svg {
+  margin-bottom: 10px;
+
+  color: var(--text-secondary);
+
+  opacity: 0.65;
+}
+
+.camera-placeholder strong {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.camera-placeholder span {
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   CAMERA VEHICLE FRAME
+   ========================================================= */
+
+.camera-vehicle-frame {
+  position: absolute;
+
+  inset: 48px 18% 62px;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.camera-vehicle-box {
+  position: relative;
+
+  width: 62%;
+  height: 55%;
+
+  min-width: 130px;
+
+  border: 2px solid rgba(34, 197, 94, 0.8);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.16),
+    0 0 16px rgba(34, 197, 94, 0.08);
+}
+
+.camera-plate {
+  position: absolute;
+
+  left: 50%;
+  bottom: 7px;
+
+  transform: translateX(-50%);
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background: rgba(15, 23, 42, 0.9);
+
+  color: #ffffff;
+
+  font-family: "JetBrains Mono", Consolas, monospace;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   VEHICLE INFORMATION
+   ========================================================= */
+
+.vehicle-panel {
+  min-width: 0;
+}
+
+.vehicle-panel > .perhubungan-panel-header > svg {
+  color: var(--text-info);
+}
+
+.vehicle-info-list {
+  padding: 5px 16px 10px;
+}
+
+.vehicle-info-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  min-height: 42px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vehicle-info-row:last-child {
+  border-bottom: 0;
+}
+
+.vehicle-info-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.vehicle-info-label svg {
+  flex-shrink: 0;
+
+  color: var(--text-info);
+}
+
+.vehicle-info-label span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+.vehicle-info-row strong {
+  max-width: 62%;
+
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.vehicle-empty {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 250px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   WEIGHT
+   ========================================================= */
+
+.weight-panel {
+  margin-bottom: 18px;
+}
+
+.weight-source {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.gross-weight-area {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 24px 20px 18px;
+
+  text-align: center;
+}
+
+.gross-weight-area > span {
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.gross-weight-area > strong {
+  margin-top: 6px;
+
+  color: var(--text-primary);
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.gross-weight-area > strong small {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.gross-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 9px;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.gross-status.normal {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.gross-status.overload {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   AXLE
+   ========================================================= */
+
+.axle-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  padding: 0 16px 16px;
+}
+
+.axle-grid article {
+  padding: 12px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: var(--bg-surface-soft);
+}
+
+.axle-grid article.total {
+  border-color: var(--border-color-focus);
+
+  background: var(--accent-soft);
+}
+
+.axle-grid span {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+.axle-grid strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+/* =========================================================
+   WEIGHT SUMMARY
+   ========================================================= */
+
+.weight-summary {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  border-top: 1px solid var(--border-color);
+
+  background: var(--bg-surface-soft);
+}
+
+.weight-summary > div {
+  padding: 13px 15px;
+
+  border-right: 1px solid var(--border-color);
+}
+
+.weight-summary > div:last-child {
+  border-right: 0;
+}
+
+.weight-summary span {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+.weight-summary strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.weight-summary .danger strong {
+  color: #ef4444;
+}
+
+.weight-summary .safe strong {
+  color: var(--status-success);
+}
+
+.weight-empty {
+  padding: 45px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.perhubungan-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+}
+
+.action-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 35px;
+
+  padding: 0 12px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.action-button.secondary {
+  border: 1px solid var(--border-color);
+
+  background: var(--bg-surface);
+
+  color: var(--text-secondary);
+}
+
+.action-button.secondary:hover {
+  border-color: var(--border-color-focus);
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-info);
+}
+
+.action-button.success {
+  border: 1px solid var(--status-success);
+
+  background: var(--status-success);
+
+  color: #ffffff;
+}
+
+.action-button.success:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.action-button.danger {
+  border: 1px solid #ef4444;
+
+  background: #ef4444;
+
+  color: #ffffff;
+}
+
+.action-button.danger:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.action-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.events-panel {
+  margin-bottom: 18px;
+}
+
+.event-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.event-summary span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.event-summary span.danger {
+  color: #ef4444;
+}
+
+.event-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.event-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.event-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.event-table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background: var(--border-color);
+}
+
+.event-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+.event-table th {
+  padding: 11px 13px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.event-table td {
+  padding: 12px 13px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+  vertical-align: middle;
+}
+
+.event-table tbody tr {
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.event-table tbody tr:hover {
+  background: var(--bg-surface-soft);
+}
+
+.event-table tbody tr.selected {
+  background: var(--accent-soft);
+}
+
+.event-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   EVENT TIME
+   ========================================================= */
+
+.event-time {
+  color: var(--text-secondary);
+
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   EVENT PLATE
+   ========================================================= */
+
+.event-plate {
+  display: inline-flex;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  background: var(--accent-soft);
+
+  color: var(--text-info);
+
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   EVENT STATUS
+   ========================================================= */
+
+.event-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.event-status.normal {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.event-status.overload {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   LANE
+   ========================================================= */
+
+.lane-badge {
+  display: inline-flex;
+
+  padding: 4px 6px;
+
+  border-radius: 5px;
+
+  background: var(--bg-surface-soft);
+
+  color: var(--text-secondary);
+
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   EVENT STATE
+   ========================================================= */
+
+.event-state {
+  display: inline-flex;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+
+  white-space: nowrap;
+}
+
+.event-state.verified {
+  background: var(--status-success-bg);
+
+  color: var(--status-success);
+}
+
+.event-state.pending {
+  background: rgba(245, 158, 11, 0.1);
+
+  color: #d97706;
+}
+
+.event-state.violation {
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   DIFFERENCE
+   ========================================================= */
+
+.difference-danger {
+  color: #ef4444 !important;
+
+  font-weight: 800;
+}
+
+.difference-safe {
+  color: var(--status-success) !important;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.perhubungan-footer {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(245, 158, 11, 0.22);
+
+  border-radius: 8px;
+
+  background: rgba(245, 158, 11, 0.07);
+
+  color: #b45309;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+.perhubungan-footer svg {
+  flex: 0 0 auto;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] .perhubungan-footer {
+  background: rgba(245, 158, 11, 0.08);
+
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .camera-frame {
+  border-color: var(--border-color);
+}
+
+/* =========================================================
+   RESPONSIVE - 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .perhubungan-main-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      290px;
+  }
+
+  .perhubungan-sitebar {
+    grid-template-columns:
+      1.3fr
+      1fr
+      1fr
+      auto;
+  }
+
+  .camera-frame {
+    min-height: 300px;
+  }
+}
+
+/* =========================================================
+   TABLET - 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .perhubungan-page {
+    padding: 18px;
+  }
+
+  .perhubungan-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perhubungan-sitebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perhubungan-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-frame {
+    min-height: 420px;
+  }
+
+  .axle-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE - 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .perhubungan-page {
+    padding: 15px;
+  }
+
+  .perhubungan-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .perhubungan-title-row {
+    align-items: flex-start;
+  }
+
+  .perhubungan-header h1 {
+    font-size: 21px;
+  }
+
+  .perhubungan-header p {
+    font-size: 12px;
+  }
+
+  .perhubungan-header-actions {
+    width: 100%;
+  }
+
+  .integration-status {
+    flex: 1;
+  }
+
+  .perhubungan-refresh {
+    flex-shrink: 0;
+  }
+
+  .perhubungan-sitebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perhubungan-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .perhubungan-kpi-card {
+    min-height: 70px;
+
+    padding: 11px;
+  }
+
+  .perhubungan-kpi-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .perhubungan-kpi-card strong {
+    font-size: 18px;
+  }
+
+  .camera-frame {
+    min-height: 360px;
+  }
+
+  .camera-vehicle-frame {
+    inset-inline: 10%;
+  }
+
+  .gross-weight-area > strong {
+    font-size: 34px;
+  }
+
+  .axle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .weight-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .weight-summary > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .weight-summary > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .perhubungan-actions {
+    justify-content: stretch;
+
+    flex-wrap: wrap;
+  }
+
+  .action-button {
+    flex: 1;
+  }
+
+  .event-summary {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE - 430
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .perhubungan-page {
+    padding: 10px;
+  }
+
+  .perhubungan-title-row {
+    gap: 8px;
+  }
+
+  .perhubungan-title-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .perhubungan-header h1 {
+    font-size: 19px;
+  }
+
+  .perhubungan-header-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .integration-status,
+  .perhubungan-refresh {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    justify-content: center;
+  }
+
+  .perhubungan-sitebar {
+    grid-template-columns: 1fr;
+  }
+
+  .perhubungan-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-frame {
+    min-height: 300px;
+  }
+
+  .camera-vehicle-frame {
+    inset-inline: 8%;
+  }
+
+  .vehicle-info-row strong {
+    max-width: 55%;
+  }
+
+  .weight-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .weight-summary > div {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .weight-summary > div:last-child {
+    border-bottom: 0;
+  }
+
+  .perhubungan-actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.perhubungan-refresh:focus-visible,
+.action-button:focus-visible {
+  outline: 2px solid var(--border-color-focus);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sitebar-live-dot,
+  .camera-live-badge span {
+    animation: none;
+  }
+
+  .perhubungan-spin {
+    animation: none;
+  }
+
+  .perhubungan-refresh,
+  .action-button,
+  .event-table tbody tr {
+    transition: none;
+  }
+}
